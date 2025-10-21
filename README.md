@@ -1,2 +1,2 @@
 # CuerpoSano
-sistema de gestión para la administracionde un gimnasio
+Sistema de gestión para la administracion de un gimnasio

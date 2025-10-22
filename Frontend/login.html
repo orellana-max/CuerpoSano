@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - Cuerpo Sano</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <div class="login-container">
     <div class="login-box">
       <img src="image/logo01.png" alt="Logo Cuerpo Sano" class="logo" />
       <h2>Ingreso al Sistema</h2>
-      <form method="POST" action="/login">
+
+      <div class="alert" id="alertLogin" style="display: none;">
+        ⚠️ Usuario no encontrado. Verificá tus credenciales.
+      </div>
+
+      <!-- <form id="loginForm" method="POST" action="/login"> -->
+      <!-- en backend procesás el email y redirigís:-->
+        <form id="loginForm">
         <label for="email">Correo electrónico</label>
         <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required />
 
@@ -22,5 +31,26 @@
       </form>
     </div>
   </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const alertBox = document.getElementById("alertLogin");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Evita el envío real
+
+      const email = document.getElementById("email").value.trim().toLowerCase();
+
+      if (email === "empleado@email.com") {
+        window.location.href = "empleado.html";
+      } else if (email === "admin@email.com") {
+        window.location.href = "administrador.html";
+      } else {
+        alertBox.style.display = "block";
+      }
+    });
+  </script>
+
 </body>
+
 </html>

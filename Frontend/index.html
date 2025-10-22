@@ -31,7 +31,12 @@
     <div class="modal-content">
       <span class="close-btn" onclick="cerrarModal()">×</span>
       <h2>Ingreso al Sistema</h2>
-      <form method="POST" action="/login">
+
+      <div class="alert" id="alertLogin" style="display: none;">
+        ⚠️ Usuario no encontrado. Verificá tus credenciales.
+      </div>
+
+      <form id="loginModalForm" method="POST" action="/login">
         <label for="email">Correo electrónico</label>
         <input type="email" id="email" name="email" required />
 
@@ -47,19 +52,35 @@
     function abrirModal() {
       document.getElementById('loginModal').style.display = 'flex';
     }
-
     function cerrarModal() {
       document.getElementById('loginModal').style.display = 'none';
     }
-
     window.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') cerrarModal();
     });
-
     window.addEventListener('click', function (e) {
       const modal = document.getElementById('loginModal');
       if (e.target === modal) cerrarModal();
     });
+
+    const form = document.getElementById("loginModalForm");
+    const alertBox = document.getElementById("alertLogin");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Evita el envío real
+
+      const email = document.getElementById("email").value.trim().toLowerCase();
+
+      if (email === "empleado@email.com") {
+        window.location.href = "empleado.html";
+      } else if (email === "admin@email.com") {
+        window.location.href = "administrador.html";
+      } else {
+        alertBox.style.display = "block";
+      }
+    });
+
+
   </script>
 
 

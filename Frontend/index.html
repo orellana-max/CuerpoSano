@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!--  METADATOS Y ESTILOS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuerpo Sano - Inicio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="dashboard-index">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+        <h1>CUERPO SANO</h1>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <h2>Bienvenido al sistema de gestión</h2>
+      <p>Control total del gimnasio desde un solo lugar</p>
+      <!-- <a href="login.html" class="btn-ingresar">Ingresar al sistema</a> -->
+      <a href="#" class="btn-ingresar" onclick="abrirModal()">Ingresar al sistema</a>
+    </main>
+  </div>
+
+  <!-- Modal de Login -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="cerrarModal()">×</span>
+      <h2>Ingreso al Sistema</h2>
+      <form method="POST" action="/login">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit" class="btn-login">Ingresar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function abrirModal() {
+      document.getElementById('loginModal').style.display = 'flex';
+    }
+
+    function cerrarModal() {
+      document.getElementById('loginModal').style.display = 'none';
+    }
+
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') cerrarModal();
+    });
+
+    window.addEventListener('click', function (e) {
+      const modal = document.getElementById('loginModal');
+      if (e.target === modal) cerrarModal();
+    });
+  </script>
+
+
+</body>
+
+</html>

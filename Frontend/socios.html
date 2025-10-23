@@ -1,101 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cuerpo Sano - Gestión de Socios</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/empleado.css" />
-  <link rel="stylesheet" href="css/socios.css" />
-  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuerpo Sano - Gestión de Socios</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/empleado.css" />
+    <link rel="stylesheet" href="css/socios.css" />
 </head>
+
 <body>
-  <div class="dashboard-index">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="logo">
-        <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
-        <h1>CUERPO SANO</h1>
-      </div>
-      <nav class="menu-empleado">
-        <ul>
-          <li><a href="empleado.html">Inicio</a></li>
-          <li><a href="socios.html" class="active">Clientes</a></li>
-          <li><a href="#">Membresías</a></li>
-          <li><a href="#">Clases</a></li>
-          <li><a href="#">Actividades</a></li>
-          <li><a href="#">Entrenadores</a></li>
-        </ul>
-      </nav>
-    </aside>
+    <div class="dashboard-index">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+                <h1>CUERPO SANO</h1>
+            </div>
+            <nav class="menu-empleado">
+                <ul>
+                    <li><a href="empleado.html">Inicio</a></li>
+                    <li><a href="socios.html" class="active">Socios</a></li>
+                    <li><a href="#">Membresías</a></li>
+                    <li><a href="#">Clases</a></li>
+                    <li><a href="#">Actividades</a></li>
+                    <li><a href="#">Entrenadores</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <h2>Gestión de Socios</h2>
-      <p>Registrá, consultá, modificá o eliminá socios del gimnasio.</p>
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>Gestión de Socios</h2>
+            <p>Consultá, registrá o modificá los datos de los socios del gimnasio.</p>
 
-      <section class="formulario-socios">
-        <h3>Registrar / Modificar Socios</h3>
-        <form id="form-socios">
-          <div class="form-grid">
-            <div>
-              <label for="nombre">Nombre y Apellido:</label>
-              <input type="text" id="nombre" required />
+            <!-- Botones de acción -->
+            <div class="acciones-socios">
+                <button id="btnNuevoSocio" class="btn-login">Registrar nuevo socio</button>
+                <button id="btnVerLista" class="btn-login oculto">Ver lista de socios</button>
             </div>
 
-            <div>
-              <label for="dni">DNI:</label>
-              <input type="number" id="dni" required />
+            <!-- Sección de identidad -->
+            <div class="contenedor-identidad oculto">
+                <div class="foto-socio">
+                    <img id="fotoSocio" src="image/placeholder-foto.png" alt="Foto del socio" />
+                </div>
+                <div class="codigo-barras">
+                    <img id="codigoBarras" src="image/placeholder-barcode.png" alt="Código de barras" />
+                </div>
             </div>
 
-            <div>
-              <label for="telefono">Teléfono:</label>
-              <input type="tel" id="telefono" required />
-            </div>
+            <!-- Formulario -->
+            <section id="formularioSocios" class="formulario-socios oculto">
+                <form id="form-socios">
+                    <div class="form-grid">
+                        <div>
+                            <label for="idSocio">ID Socio:</label>
+                            <input type="text" id="idSocio" disabled />
+                        </div>
+                        <div>
+                            <label for="nombre">Nombre y Apellido:</label>
+                            <input type="text" id="nombre" required />
+                        </div>
+                        <div>
+                            <label for="dni">DNI:</label>
+                            <input type="number" id="dni" required />
+                        </div>
+                        <div>
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" required />
+                        </div>
+                        <div>
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" required />
+                        </div>
+                        <div>
+                            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                            <input type="date" id="fechaNacimiento" required />
+                        </div>
+                        <div>
+                            <label for="membresia">Tipo de Membresía:</label>
+                            <select id="membresia" required>
+                                <option value="">Seleccione...</option>
+                                <option value="mensual">Mensual</option>
+                                <option value="anual">Anual</option>
+                                <option value="semanal">Semanal</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="foto">Foto del Socio:</label>
+                            <input type="file" id="foto" accept="image/*" />
+                        </div>
+                    </div>
 
-            <div>
-              <label for="email">Correo Electrónico:</label>
-              <input type="email" id="email" required />
-            </div>
+                    <!-- Botones del formulario -->
+                    <div class="acciones-formulario" style="margin-top: 1.5rem;">
+                        <button type="submit" id="btnGuardar" class="btn-login">Guardar</button>
+                        <button type="reset" id="btnLimpiar" class="btn-login">Limpiar</button>
+                        <button type="button" id="btnModificar" class="btn-login oculto">Modificar datos</button>
+                        <button type="button" id="btnEliminar" class="btn-login btn-eliminar oculto">Eliminar</button>
+                    </div>
+                </form>
+            </section>
 
-            <div>
-              <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-              <input type="date" id="fechaNacimiento" required />
-            </div>
+            <!-- Lista de socios -->
+            <section id="listaSocios" class="lista-socios">
+                <h3>Socios Registrados</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>DNI</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th>Membresía</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-socios">
+                        <!-- Filas generadas dinámicamente -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="js/socios-gestion.js" defer></script>
+</body>
 
-            <div>
-              <label for="membresia">Tipo de Membresía:</label>
-              <select id="membresia" required>
-                <option value="">Seleccione...</option>
-                <option value="mensual">Mensual</option>
-                <option value="anual">Anual</option>
-                <option value="semanal">Semanal</option>
-              </select>
-            </div>
-          </div>
-
-          <button type="submit" class="btn-login">Guardar</button>
-          <button type="reset" class="btn-login">Limpiar</button>
-        </form>
-      </section>
-
-      <section class="lista-socios">
-        <h3>Socios Registrados</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>DNI</th>
-              <th>Teléfono</th>
-              <th>Email</th>
-              <th>Membresía</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="tabla-socios">
-            <!-- Filas generadas dinámicamente -->
-          </tbody>
-        </table>
-      </section>
-    </main>
-  </div>
+</html>

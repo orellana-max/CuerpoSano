@@ -1,4 +1,78 @@
+.oculto {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
 
+
+.contenedor-identidad {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.foto-socio img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.codigo-barras img {
+  height: 80px;
+}
+
+.acciones-formulario button {
+  margin-right: 0.5rem;
+}
+
+.btn-login {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Contenedor de botones en la celda */
+td button {
+  margin-right: 0.3rem;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Botón Editar */
+.btn-editar {
+  background-color: var(--celeste);
+  color: var(--blanco);
+}
+
+.btn-editar:hover {
+  background-color: #0077b6;
+}
+
+/* Botón Eliminar */
+.btn-eliminar {
+  background-color: #ff4d4d;
+  color: var(--blanco);
+}
+
+.btn-eliminar:hover {
+  background-color: #cc0000;
+}
+
+/* Botón Ver */
+.btn-ver {
+  background-color: #05e750;
+  color: var(--blanco);
+}
+
+.btn-ver:hover {
+  background-color: #0e9720;
+}
 
 
 /* === Formulario de Socios === */
@@ -7,17 +81,23 @@
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 30px;
-  width: 100%; /* ocupa todo el ancho disponible */
-  max-width: 900px; /* opcional: límite para evitar que se desborde en pantallas grandes */
+  width: 100%;
+  /* ocupa todo el ancho disponible */
+  max-width: 900px;
+  /* opcional: límite para evitar que se desborde en pantallas grandes */
 }
 
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+  grid-template-columns: repeat(2, 1fr);
+  /* Dos columnas iguales */
   gap: 15px;
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
-  justify-items: stretch; /* Estira los divs para que se alineen */
-  align-items: start; /* Alinea los elementos al inicio verticalmente */
+  width: 100%;
+  /* Asegura que ocupe todo el ancho disponible */
+  justify-items: stretch;
+  /* Estira los divs para que se alineen */
+  align-items: start;
+  /* Alinea los elementos al inicio verticalmente */
 }
 
 .formulario-socios label {
@@ -53,11 +133,13 @@
 
 @media (max-width: 768px) {
   .form-grid {
-    grid-template-columns: 1fr; /* una sola columna */
+    grid-template-columns: 1fr;
+    /* una sola columna */
   }
 
   .btn-login {
     width: 100%;
     margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }

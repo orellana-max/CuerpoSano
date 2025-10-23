@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuerpo Sano - Crear Nueva Membresía</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/empleado.css" />
+    <link rel="stylesheet" href="css/membresias-crear.css" />
+    <link rel="stylesheet" href="css/socios.css" /> 
+</head>
+<body>
+    <div class="dashboard-index">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+                <h1>CUERPO SANO</h1>
+            </div>
+            <nav class="menu-empleado">
+                <ul>
+                    <li><a href="empleado.html">Inicio</a></li>
+                    <li><a href="socios.html">Clientes</a></li>
+                    <li><a href="membresias.html" class="active">Membresías</a></li>
+                    <li><a href="#">Clases</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h2>Crear Nuevo Tipo de Membresía</h2>
+            <p>Definí el nombre, duración y el precio para un nuevo plan de acceso.</p>
+            
+            <section class="formulario-miembro">
+                <h3>Detalles de la Membresía</h3>
+                <form id="formMembresia">
+                    <div class="form-grid">
+                        
+                        <div>
+                            <label for="nombreMembresia">Nombre del Plan:</label>
+                            <input type="text" id="nombreMembresia" required placeholder="Ej: Plan Ilimitado o Abono Trimestral" />
+                        </div>
+
+                        <div>
+                            <label for="precio">Precio Base ($):</label>
+                            <input type="number" id="precio" required min="0" />
+                        </div>
+
+                        <div>
+                            <label for="duracionDias">Duración (en días):</label>
+                            <input type="number" id="duracionDias" required min="1" placeholder="Ej: 30 (para mensual) o 365 (para anual)" />
+                        </div>
+                        
+                        <div>
+                            <label for="tipoAcceso">Tipo de Acceso:</label>
+                            <select id="tipoAcceso" required>
+                                <option value="">Seleccione el nivel de acceso...</option>
+                                <option value="completo">Acceso Completo (Musculación y Clases)</option>
+                                <option value="musculacion">Solo Musculación</option>
+                                <option value="clases">Solo Clases</option>
+                            </select>
+                        </div>
+                        
+                        <div class="campo-doble">
+                            <label for="descripcion">Descripción / Beneficios:</label>
+                            <textarea id="descripcion" required placeholder="Describa brevemente lo que incluye este plan, ej: 'Acceso total a todas las instalaciones'"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-login">Guardar Tipo de Membresía</button>
+                    <button type="reset" class="btn-login">Limpiar</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

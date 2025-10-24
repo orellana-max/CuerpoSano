@@ -81,7 +81,7 @@ button:hover {
   background-color: #005fcc;
 }
 
-/* Tabla */
+/* Tabla Actividades */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -108,79 +108,26 @@ th {
 }
 
 
-
-
-/* === Sidebar con logo arriba y menú debajo === */
-.sidebar {
-  background-color: var(--azul);
-  color: var(--blanco);
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 2rem;
-}
-
-.sidebar .logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  
-}
-
-.sidebar .logo img {
-  width: 80px;
-  margin-bottom: 0.5rem;
-}
-
-.sidebar .logo h1 {
-  font-size: 1.5rem;
-}
-
-/* === Menú del empleado debajo del logo === */
-.menu-empleado {
-  width: 100%;
-  padding: 0 1rem;
-}
-
-.menu-empleado ul {
-  list-style: none;
-  padding: 0;
-}
-
-.menu-empleado li {
-  margin-bottom: 0.5rem;
-}
-
-.menu-empleado a {
-  display: block;
-  padding: 0.75rem 1rem;
-  background-color: var(--celeste);
-  color: var(--blanco);
-  text-decoration: none;
+.acciones button {
+  padding: 0.4rem 0.7rem;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
   font-weight: bold;
-  border-radius: 6px;
-  text-align: center;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-.menu-empleado a:hover {
-  background-color: #0090dd;
+.Editar {
+  background-color: #00b347;
 }
 
-    .acciones button {
-        padding: 0.4rem 0.7rem;
-        border: none;
-        border-radius: 4px;
-        color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-    }
+.Eliminar {
+  background-color: #d9534f;
+}
 
-   .Editar { background-color: #00b347; }
-   .Eliminar { background-color: #d9534f; }
-   .Imprimir { background-color: var(--celeste); }
+.Imprimir {
+  background-color: var(--celeste);
+}
 
 
 /* === Responsivo: sidebar horizontal y botones más pequeños === */

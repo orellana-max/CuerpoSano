@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cuerpo Sano - Gestión de Membresías</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/membresias-crear.css" />
     <link rel="stylesheet" href="css/socios.css" /> 
     <link rel="stylesheet" href="css/empleado.css" />
     <style>
@@ -16,21 +15,7 @@
             align-items: center;
             margin-bottom: 25px;
         }
-        .btn-crear-nuevo {
-            padding: 10px 20px;
-            background-color: #28a745; /* Botón verde para "Crear" */
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none; 
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-        .btn-crear-nuevo:hover {
-            background-color: #1e7e34;
-        }
+        
     </style>
 </head>
 <body>
@@ -46,10 +31,10 @@
                     <li><a href="socios.html">Socios</a></li>
                     <li><a href="entrenadores.html">Entrenadores</a></li>
                     <li><a href="membresias.html" class="active">Membresías</a></li>
-                    <li><a href="#clases">Clases</a></li>
+                    <li><a href="clases.html">Clases</a></li>
                     <li><a href="actividades.html">Actividades</a></li>
-                    <li><a href="#cobros">Cobros</a></li>
-                    <li><a href="#asistencia">Registrar Asistencia</a></li>
+                    <li><a href="#cobros.html">Cobros</a></li>
+                    <li><a href="#asistencia.html">Registrar Asistencia</a></li>
                     <li><a href="index.html" class="btn-salir">Salir</a></li> <!-- 🔹 Botón agregado -->
                 </ul>
             </nav>
@@ -104,6 +89,7 @@
                             <td>1 día</td>
                             <td>Acceso a una sola clase de yoga/spinning.</td>
                             <td>
+                                <button class="btn-login">Ver</button>
                                 <button class="btn-login">Modificar </button>
                                 <button class="btn-login" style="background-color: #f44336;">Eliminar </button>
                             </td>

@@ -1,0 +1,52 @@
+<!DOCTYPE html> <!--Clase.html-->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuerpo Sano - Gestión de Clases</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/empleado.css" />
+    <link rel="stylesheet" href="css/clases.css" /> <!-- opcional para estilos específicos -->
+</head>
+
+<body>
+    <div class="dashboard-index">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+                <h1>CUERPO SANO</h1>
+            </div>
+            <nav class="menu-empleado">
+                <ul>
+                    <li><a href="empleado.html">Home</a></li>
+                    <li><a href="socios.html">Socios</a></li>
+                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="membresias.html">Membresías</a></li>
+                    <li><a href="clases.html" class="active">Clases</a></li>
+                    <li><a href="actividades.html">Actividades</a></li>
+                    <li><a href="#cobros">Cobros</a></li>
+                    <li><a href="#asistencia">Registrar Asistencia</a></li>
+                    <li><a href="index.html" class="btn-salir">Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>Gestión de Clases</h2>
+            <p>Administrá las clases del gimnasio: registro, edición, inscripción y actividades asociadas.</p>
+
+            <section class="acciones-clase">
+                <a href="clase-crear.html" class="btn-login">Registrar Nueva Clase</a>
+                <a href="clase-lista.html" class="btn-accion">Ver Clases</a>
+                <a href="clase-inscripciones.html" class="btn-accion">Inscripciones</a>
+                <a href="clase-actividades.html" class="btn-accion">Actividades por Clase</a>
+                <a href="#" onclick="window.print()" class="btn-accion">Imprimir Listado</a>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -7,8 +7,9 @@
     --blanco: #ffffff;
     --sombra: rgba(0, 0, 0, 0.1);
 }
+
 .oculto {
-  display: none;
+    display: none;
 }
 
 /* === Reset básico === */
@@ -120,14 +121,14 @@ body {
 }
 
 .alert {
-  background-color: #ffdddd;
-  color: #a94442;
-  border: 1px solid #e0b4b4;
-  padding: 0.75rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-  text-align: center;
-  font-weight: bold;
+    background-color: #ffdddd;
+    color: #a94442;
+    border: 1px solid #e0b4b4;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 
@@ -165,6 +166,25 @@ select {
     background-color: #005f9e;
 }
 
+.btn-crear-nuevo {
+    padding: 10px 20px;
+    background-color: #28a745;
+    /* Botón verde para "Crear" */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-crear-nuevo:hover {
+    background-color: #1e7e34;
+}
+
+
 /* === Modal flotante de login === */
 .modal {
     position: fixed;
@@ -190,6 +210,7 @@ select {
     position: relative;
     text-align: center;
 }
+
 /* Botón de cerrar modal */
 .close-btn {
     position: absolute;

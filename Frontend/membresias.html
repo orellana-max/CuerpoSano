@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuerpo Sano - Gestión de Membresías</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/empleado.css" />
+    <link rel="stylesheet" href="css/membresias-crear.css" />
+    <link rel="stylesheet" href="css/socios.css" /> 
+    <style>
+        /* Estilos para el botón de acción principal */
+        .encabezado-tabla {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .btn-crear-nuevo {
+            padding: 10px 20px;
+            background-color: #28a745; /* Botón verde para "Crear" */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none; 
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .btn-crear-nuevo:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-index">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+                <h1>CUERPO SANO</h1>
+            </div>
+            <nav class="menu-empleado">
+                <ul>
+                    <li><a href="empleado.html">Inicio</a></li>
+                    <li><a href="socios.html">Clientes</a></li>
+                    <li><a href="membresias.html" class="active">Membresías</a></li>
+                    <li><a href="#">Clases</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h2>Tipos de Membresía Disponibles</h2>
+            <p>Lista de todos los planes de membresía que pueden ser adquiridos por los clientes.</p>
+
+            <section class="lista-membresias">
+                <div class="encabezado-tabla">
+                    <h3>Gestión de Tipos de Membresía</h3>
+                    <a href="membresias-crear.html" class="btn-crear-nuevo">
+                        + Crear Nueva Membresía
+                    </a>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre del Plan</th>
+                            <th>Precio Base</th>
+                            <th>Duración (Días)</th>
+                            <th>Descripción / Beneficios</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaTiposMembresia">
+                        <tr>
+                            <td>Plan Mensual Estándar</td>
+                            <td>$5.000,00</td>
+                            <td>30 días</td>
+                            <td>Acceso completo a sala de musculación.</td>
+                            <td>
+                                <button class="btn-login">Modificar</button>
+                                <button class="btn-login" style="background-color: #f44336;">Eliminar </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Plan Anual Premium</td>
+                            <td>$50.000,00</td>
+                            <td>365 días</td>
+                            <td>Acceso a musculación y todas las clases.</td>
+                            <td>
+                                <button class="btn-login">Modificar </button>
+                                <button class="btn-login" style="background-color: #f44336;">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Plan Clase Única</td>
+                            <td>$800,00</td>
+                            <td>1 día</td>
+                            <td>Acceso a una sola clase de yoga/spinning.</td>
+                            <td>
+                                <button class="btn-login">Modificar </button>
+                                <button class="btn-login" style="background-color: #f44336;">Eliminar </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

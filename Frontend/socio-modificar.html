@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuerpo Sano - Modificar o Consultar Miembros</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/empleado.css" />
+    <link rel="stylesheet" href="css/membresias-crear.css" />
+    <link rel="stylesheet" href="css/socios.css" />
+</head>
+<body>
+    <div class="dashboard-index">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+                <h1>CUERPO SANO</h1>
+            </div>
+            <nav class="menu-empleado">
+                <ul>
+                    <li><a href="empleado.html">Inicio</a></li>
+                    <li><a href="socios.html" class="active">Clientes</a></li>
+                    <li><a href="membresias-crear.html">Crear Membresía</a></li>
+                    <li><a href="membresias-modificar.html">Modificar Membresías</a></li>
+                    <li><a href="#">Clases</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h2>Consultar, Modificar o Eliminar Miembros</h2>
+            <p>Buscá un socio para ver su estado, editar sus datos o dar de baja su registro</p>
+
+            <section class="lista-miembros">
+                <form id="formBusqueda" style="margin-bottom: 20px; display: flex; gap: 10px;">
+                    <input type="text" placeholder="Buscar por DNI, Nombre o Código de Barras..." style="flex: 1; padding: 10px; border-radius: 6px;" />
+                    <button type="submit" class="btn-login" style="width: auto;">Buscar </button>
+                </form>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>DNI</th>
+                            <th>Membresía</th>
+                            <th>Fecha de Ingreso</th>
+                            <th>Vencimiento Membresía</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaMiembros">
+                        <tr>
+                            <td>Juan García</td>
+                            <td>40512345</td>
+                            <td>Mensual</td>
+                            <td>15/09/2025</td>
+                            <td>15/10/2025</td>
+                            <td style="color: green; font-weight: bold;">Vigente</td>
+                            <td>
+                                <button class="btn-login">Consultar </button>
+                                <button class="btn-login">Editar </button>
+                                <button class="btn-login" style="background-color: #f44336;">Eliminar </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>María Pérez</td>
+                            <td>35678901</td>
+                            <td>Anual</td>
+                            <td>01/01/2025</td>
+                            <td>01/01/2026</td>
+                            <td style="color: red; font-weight: bold;">Vencida</td>
+                            <td>
+                                <button class="btn-login">Consultar</button>
+                                <button class="btn-login">Editar </button>
+                                <button class="btn-login" style="background-color: #f44336;">Eliminar </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

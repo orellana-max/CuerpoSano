@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuerpo Sano - Gestión de Miembros</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/empleado.css" />
+    <link rel="stylesheet" href="css/socios.css" />
+    <style>
+        /* Estilos específicos para la página de menú de acción */
+        .acciones-miembro {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 50px;
+            max-width: 500px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-accion {
+            padding: 15px 30px;
+            background-color: var(--celeste); 
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none; 
+            text-align: center;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-accion:hover {
+            background-color: #0090dd;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-index">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+                <h1>CUERPO SANO</h1>
+            </div>
+            <nav class="menu-empleado">
+                <ul>
+                    <li><a href="empleado.html">Inicio</a></li>
+                    <li><a href="socios.html" class="active">Clientes</a></li>
+                    <li><a href="membresias.html">Membresías</a></li>
+                    <li><a href="#">Clases</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h2>Gestión de Miembros</h2>
+            <p>Seleccione una acción para administrar la información de los clientes.</p>
+
+            <div class="acciones-miembro">
+                <a href="socio-crear.html" class="btn-accion">
+                    Registrar Nuevo Miembro
+                </a>
+                <a href="socio-modificar.html" class="btn-accion">
+                    Consultar Miembros
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

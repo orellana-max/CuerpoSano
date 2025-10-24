@@ -8,8 +8,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  gap: 2rem;
-  /* separa logo y menú de forma natural */
+  gap: 2rem; /* separa logo y menú de forma natural */
 }
 
 .sidebar .logo {
@@ -62,24 +61,6 @@
   background-color: #0090dd;
 }
 
-.menu-empleado .btn-salir {
-  background-color: #007bbd; /* celeste más oscuro */
-  color: var(--blanco);
-  font-weight: bold;
-  border: 2px solid var(--celeste); /* borde celeste */
-  border-radius: 6px;
-  padding: 0.75rem 1rem;
-  text-align: center;
-  display: block;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.menu-empleado .btn-salir:hover {
-  background-color: #006aa3; /* aún más oscuro al pasar el mouse */
-  border-color: #00a0e0; /* tono más vibrante en hover */
-}
-
-
 /* === Responsivo: sidebar horizontal y botones más pequeños === */
 @media (max-width: 768px) {
   .dashboard-index {
@@ -129,4 +110,3 @@
     text-align: center;
   }
 }
-

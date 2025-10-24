@@ -108,6 +108,7 @@ button:hover {
 }
 
 /* === Sidebar con logo arriba y menú debajo === */
+/*
 .sidebar {
   background-color: var(--azul);
   color: var(--blanco);
@@ -134,8 +135,10 @@ button:hover {
 .sidebar .logo h1 {
   font-size: 1.5rem;
 }
+*/
 
 /* === Menú del empleado debajo del logo === */
+/*
 .menu-empleado {
   width: 100%;
   padding: 0 1rem;
@@ -165,6 +168,7 @@ button:hover {
 .menu-empleado a:hover {
   background-color: #0090dd;
 }
+*/
 
 /* === Responsivo: sidebar horizontal y botones más pequeños === */
 @media (max-width: 768px) {

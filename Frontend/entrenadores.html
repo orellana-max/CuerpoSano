@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Entrenadores - Cuerpo Sano</title>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/entrenadores.css"/>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/entrenadores.css" />
+    <link rel="stylesheet" href="css/empleado.css" />
 </head>
 
 <body>
@@ -18,86 +20,94 @@
             </div>
             <nav class="menu-empleado">
                 <ul>
-                    <li><a href="#clientes">Clientes</a></li>
-                    <li><a href="#entrenadores">Entrenadores</a></li>
+                    <li><a href="empleado.html">Home</a></li>
+                    <li><a href="socios.html">Socios</a></li>
+                    <li><a href="entrenadores.html" class="active">Entrenadores</a></li>
+                    <li><a href="membresias.html">Membresías</a></li>
                     <li><a href="#clases">Clases</a></li>
-                    <li><a href="#actividades">Actividades</a></li>
+                    <li><a href="actividades.html">Actividades</a></li>
+                    <li><a href="#cobros">Cobros</a></li>
                     <li><a href="#asistencia">Registrar Asistencia</a></li>
+                    <li><a href="index.html" class="btn-salir">Salir</a></li> <!-- 🔹 Botón agregado -->
                 </ul>
             </nav>
         </aside>
 
-  
- <!-- Main Content -->
-  <div class="content-area">
-        <h2>Gestión de Entrenadores</h2>
-        <p>Registrá, consultá o gestioná los datos de los entrenadores del gimnasio.</p>
 
-        <div class="trainer-form">
-            <h3>Registrar nuevo entrenador</h3>
-            <form action="#" method="post">
-                <div>
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
-                </div>
-                <div>
-                    <label for="direccion">Dirección</label>
-                    <input type="text" id="direccion" name="direccion" placeholder="Calle, número, ciudad" required>
-                </div>
-                <div>
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 1234-5678" required>
-                </div>
-                <div>
-                    <label for="certificacion">Certificación</label>
-                    <input type="text" id="certificacion" name="certificacion" placeholder="Ej: Entrenador Personal Nivel 2" required>
-                </div>
-                <div>
-                    <label for="fechaCert">Fecha de certificación</label>
-                    <input type="date" id="fechaCert" name="fechaCert" required>
-                </div>
-                <div>
-                    <label for="vencimiento">Vencimiento de certificación</label>
-                    <input type="date" id="vencimiento" name="vencimiento">
-                </div>
-                <div>
-                    <label for="institucion">Institución emisora</label>
-                    <input type="text" id="institucion" name="institucion" placeholder="Ej: Instituto Nacional del Deporte">
-                </div>
-                <div>
-                    <label for="comentarios">Comentarios</label>
-                    <textarea id="comentarios" name="comentarios" rows="3" placeholder="Observaciones adicionales..."></textarea>
-                </div>
-                <div>
-                    <button type="submit">Registrar Entrenador</button>
-                    <button type="reset">Limpiar</button>
-                </div>
-            </form>
+        <!-- Main Content -->
+        <div class="content-area">
+            <h2>Gestión de Entrenadores</h2>
+            <p>Registrá, consultá o gestioná los datos de los entrenadores del gimnasio.</p>
+
+            <div class="trainer-form">
+                <h3>Registrar nuevo entrenador</h3>
+                <form action="#" method="post">
+                    <div>
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div>
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" placeholder="Calle, número, ciudad" required>
+                    </div>
+                    <div>
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 1234-5678" required>
+                    </div>
+                    <div>
+                        <label for="certificacion">Certificación</label>
+                        <input type="text" id="certificacion" name="certificacion"
+                            placeholder="Ej: Entrenador Personal Nivel 2" required>
+                    </div>
+                    <div>
+                        <label for="fechaCert">Fecha de certificación</label>
+                        <input type="date" id="fechaCert" name="fechaCert" required>
+                    </div>
+                    <div>
+                        <label for="vencimiento">Vencimiento de certificación</label>
+                        <input type="date" id="vencimiento" name="vencimiento">
+                    </div>
+                    <div>
+                        <label for="institucion">Institución emisora</label>
+                        <input type="text" id="institucion" name="institucion"
+                            placeholder="Ej: Instituto Nacional del Deporte">
+                    </div>
+                    <div>
+                        <label for="comentarios">Comentarios</label>
+                        <textarea id="comentarios" name="comentarios" rows="3"
+                            placeholder="Observaciones adicionales..."></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">Registrar Entrenador</button>
+                        <button type="reset">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+
+            <table class="trainer-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Certificación</th>
+                        <th>Institución</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>+54 9 11 1234-5678</td>
+                        <td>Entrenador Nivel 2</td>
+                        <td>Instituto del Deporte</td>
+                        <td>
+                            <button>Editar</button>
+                            <button>Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-        <table class="trainer-table">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Teléfono</th>
-                    <th>Certificación</th>
-                    <th>Institución</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Juan Pérez</td>
-                    <td>+54 9 11 1234-5678</td>
-                    <td>Entrenador Nivel 2</td>
-                    <td>Instituto del Deporte</td>
-                    <td>
-                        <button>Editar</button>
-                        <button>Eliminar</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 </body>
+
 </html>

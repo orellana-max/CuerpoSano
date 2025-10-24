@@ -11,13 +11,14 @@
 
 <body>
   <div class="dashboard-index">
+    <!-- barra lateral  -->
     <aside class="sidebar">
       <div class="logo">
         <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
         <h1>CUERPO SANO</h1>
       </div>
     </aside>
-
+    <!-- contenido principal  -->
     <main class="main-content">
       <h2>Bienvenido al sistema de gestión</h2>
       <p>Control total del gimnasio desde un solo lugar</p>
@@ -26,7 +27,7 @@
     </main>
   </div>
 
-  <!-- Modal de Login -->
+  <!-- Modal de Login (ventana emergente) -->
   <div id="loginModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="cerrarModal()">×</span>
@@ -70,7 +71,7 @@
       e.preventDefault(); // Evita el envío real
 
       const email = document.getElementById("email").value.trim().toLowerCase();
-
+      // Simulación de validación de usuario
       if (email === "empleado@email.com") {
         window.location.href = "empleado.html";
       } else if (email === "admin@email.com") {
@@ -80,9 +81,7 @@
       }
     });
 
-
   </script>
-
 
 </body>
 

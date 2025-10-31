@@ -129,3 +129,271 @@
   }
 }
 
+.formulario-miembro {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 950px;
+  margin: 0 auto 30px;
+}
+
+.formulario-miembro h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 40px;
+}
+
+.formulario-miembro label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.formulario-miembro input,
+.formulario-miembro select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.btn-login {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  background-color: #0077ff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-login:hover {
+  background-color: #005ed9;
+}
+
+/* === HISTORIAL DE COBROS === */
+
+.lista-miembros table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.lista-miembros th {
+  background-color: #0077cc;
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+.lista-miembros td {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.lista-miembros tr:hover {
+  background-color: #f2f2f2;
+}
+
+.lista-miembros h3 {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* === Campos dinámicos de pagos === */
+.metodo-pago {
+  margin-top: 20px;
+  background-color: #f1f5ff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #cfd8ff;
+}
+
+.metodo-pago label {
+  font-weight: 600;
+}
+
+.metodo-pago input {
+  border: 1px solid #bbb;
+}
+
+/* === Sección QR de pago === */
+.qr-pago {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.qr-container {
+  margin: 20px 0;
+}
+
+.qr-container img {
+  width: 200px;
+  height: 200px;
+  border: 4px solid #0077cc;
+  border-radius: 10px;
+  background-color: white;
+  padding: 8px;
+}
+
+#infoCuenta {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* === Tabla de Historial de Cobros === */
+.lista-cobros {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.lista-cobros table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.lista-cobros th,
+.lista-cobros td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.lista-cobros th {
+  background-color: #0077cc;
+  color: #fff;
+  font-weight: 600;
+}
+
+.lista-cobros tr:nth-child(even) {
+  background-color: #f2f6ff;
+}
+
+.lista-cobros tr:hover {
+  background-color: #eaf2ff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* === Botones de acción === */
+.btn-editar,
+.btn-eliminar {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  margin-right: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-editar {
+  background-color: #0077ff;
+}
+
+.btn-editar:hover {
+  background-color: #005ed9;
+}
+
+.btn-eliminar {
+  background-color: #ff4d4d;
+}
+
+.btn-eliminar:hover {
+  background-color: #d93636;
+}
+
+/* === FILTROS Y BUSCADOR === */
+.filtros-cobros {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin: 20px auto 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+}
+
+.filtros-cobros .busqueda,
+.filtros-cobros .filtros {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.filtros-cobros label {
+  font-weight: 600;
+  color: #333;
+}
+
+.filtros-cobros input[type="text"],
+.filtros-cobros input[type="date"],
+.filtros-cobros select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+.btn-filtrar,
+.btn-limpiar {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.2s;
+}
+
+.btn-filtrar {
+  background-color: #0077ff;
+}
+
+.btn-filtrar:hover {
+  background-color: #005ed9;
+}
+
+.btn-limpiar {
+  background-color: #ff4d4d;
+}
+
+.btn-limpiar:hover {
+  background-color: #d93636;
+}
+
+
+
+
+
+
+

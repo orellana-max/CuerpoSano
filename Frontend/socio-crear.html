@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuerpo Sano - Registrar Nuevo Miembro</title>
+    <title>Cuerpo Sano - Registrar Nuevo Socio</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/empleado.css" />
     <link rel="stylesheet" href="css/membresias-crear.css" />
@@ -27,7 +27,7 @@
         </aside>
 
         <main class="main-content">
-            <h2>Registrar Nuevo Miembro</h2>
+            <h2>Registrar Nuevo Socio</h2>
             <p>Completá los datos del socio para registrarlo en el gimnasio.</p>
 
             <section class="formulario-miembro">
@@ -68,19 +68,18 @@
                         <div class="campo-doble">
                             <label for="membresia">Tipo de Membresía:</label>
                             <select id="membresia" required>
-                                <option value="">Seleccione una membresía...</option> <!--Comentario Melany: SON PARA SIMULAR. SACARLO 
-                                                                                                APLIQUEMOS LAS BASE DE DATOS-->
+                                <option value="">Seleccione una membresía...</option>
                                 <option value="mensual-estandar">Plan Mensual Estándar</option> 
                                 <option value="anual-premium">Plan Anual Premium</option>
                                 <option value="clase-unica">Plan Clase Única</option>
-                                </select>
+                            </select>
                             <p class="nota-campo">
                                 Las membresías disponibles se gestionan en la sección <a href="membresias.html">Membresías</a>.
                             </p>
                         </div>
 
                         <div>
-                            <label for="foto">Foto del Miembro:</label>
+                            <label for="foto">Foto del Socio:</label>
                             <input type="file" id="foto" accept="image/*" />
                         </div>
 
@@ -97,5 +96,28 @@
             </section>
         </main>
     </div>
+
+    <!-- === Script agregado === -->
+    <script>
+        document.getElementById("formMiembro").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const socio = {
+                nombre: document.getElementById("nombre").value,
+                dni: document.getElementById("dni").value,
+                telefono: document.getElementById("telefono").value,
+                email: document.getElementById("email").value,
+                fechaNacimiento: document.getElementById("fechaNacimiento").value,
+                direccion: document.getElementById("direccion").value,
+                membresia: document.getElementById("membresia").value,
+            };
+
+            // Guardamos temporalmente el socio para mostrarlo en la página siguiente
+            localStorage.setItem("socioNuevo", JSON.stringify(socio));
+
+            // Redirige a la página de confirmación
+            window.location.href = "registro_exitoso.html";
+        });
+    </script>
 </body>
 </html>

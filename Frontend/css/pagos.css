@@ -1,0 +1,83 @@
+.formulario-miembro {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 950px;
+  margin: 0 auto 30px;
+}
+
+.formulario-miembro h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 40px;
+}
+
+.formulario-miembro label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.formulario-miembro input,
+.formulario-miembro select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.btn-login {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  background-color: #0077ff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-login:hover {
+  background-color: #005ed9;
+}
+
+/* === HISTORIAL DE COBROS === */
+
+.lista-miembros table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.lista-miembros th {
+  background-color: #0077cc;
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+.lista-miembros td {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.lista-miembros tr:hover {
+  background-color: #f2f2f2;
+}
+
+.lista-miembros h3 {
+  margin-top: 30px;
+  text-align: center;
+}

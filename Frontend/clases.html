@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuerpo Sano - Gestión de Miembros</title>
+    <title>Cuerpo Sano - Gestión de Clases</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/empleado.css" />
-    <link rel="stylesheet" href="css/socios.css" />
+    <link rel="stylesheet" href="css/socios.css" /> 
     <style>
         /* Estilos específicos para la página de menú de acción */
         .acciones-miembro {
@@ -47,29 +47,25 @@
             </div>
             <nav class="menu-empleado">
                 <ul>
-                    <li><a href="empleado.html">Home</a></li>
-                    <li><a href="socios.html" class="active">Socios</a></li>
-                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="empleado.html">Inicio</a></li>
+                    <li><a href="socios.html">Clientes</a></li>
                     <li><a href="membresias.html">Membresías</a></li>
-                    <li><a href="clases.html">Clases</a></li>
-                    <li><a href="actividades.html">Actividades</a></li>
-                    <li><a href="cobros-historial.html">Cobros</a></li>
-                    <li><a href="#asistencia">Registrar Asistencia</a></li>
-                    <li><a href="index.html" class="btn-salir">Salir</a></li> <!-- 🔹 Botón agregado -->
+                    <li><a href="clases.html" class="active">Clases</a></li>
+                    <li><a href="#">Actividades</a></li>
                 </ul>
             </nav>
         </aside>
 
         <main class="main-content">
-            <h2>Gestión de Miembros</h2>
-            <p>Seleccione una acción para administrar la información de los clientes.</p>
+            <h2>Gestión de Horarios y Clases</h2>
+            <p>Seleccione una acción para administrar la grilla de clases del gimnasio.</p>
 
             <div class="acciones-miembro">
-                <a href="socio-crear.html" class="btn-accion">
-                    Registrar Nuevo Miembro
+                <a href="clases-crear.html" class="btn-accion">
+                    Registrar Nuevo Horario de Clase (CU11)
                 </a>
-                <a href="socio-modificar.html" class="btn-accion">
-                    Consultar Miembros
+                <a href="clases-modificar.html" class="btn-accion">
+                    Modificar, Consultar o Eliminar Clases (CU12-CU15)
                 </a>
             </div>
         </main>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuerpo Sano - Modificar Clases</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/empleado.css" />
+    <link rel="stylesheet" href="css/membresias-crear.css" />
+    <link rel="stylesheet" href="css/socios.css" /> 
+    <style>
+        /* Estilos de la tabla de clases (similar a membresías) */
+        .lista-clases table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .lista-clases table th {
+            background-color: var(--azul); 
+            color: white;
+            text-align: left;
+            padding: 12px 10px;
+            border: 1px solid var(--azul);
+        }
+        
+        .lista-clases table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #eee;
+        }
+        
+        /* Estilo para la columna de acciones */
+        .lista-clases table td:last-child {
+            white-space: nowrap; 
+            text-align: center;
+        }
+        
+        /* Estilo para los botones de acción en línea */
+        .lista-clases table .btn-accion-tabla {
+            padding: 6px 10px;
+            margin-left: 5px; 
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .lista-clases .btn-editar {
+            background-color: #007bff;
+            color: white;
+        }
+        .lista-clases .btn-eliminar {
+            background-color: #dc3545;
+            color: white;
+        }
+        .lista-clases .btn-imprimir {
+            background-color: #17a2b8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-index">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+                <h1>CUERPO SANO</h1>
+            </div>
+            <nav class="menu-empleado">
+                <ul>
+                    <li><a href="empleado.html">Inicio</a></li>
+                    <li><a href="socios.html">Clientes</a></li>
+                    <li><a href="membresias.html">Membresías</a></li>
+                    <li><a href="clases.html" class="active">Clases</a></li>
+                    <li><a href="#">Actividades</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h2>Modificar, Consultar o Eliminar Horarios (CU12-CU15)</h2>
+            <p>Lista de todos los horarios programados. Podés modificar el entrenador, el horario o el cupo.</p>
+
+            <section class="lista-clases">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre Clase</th>
+                            <th>Entrenador</th>
+                            <th>Día</th>
+                            <th>Hora Inicio</th>
+                            <th>Cupo Máximo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Spinning Principiantes</td>
+                            <td>Pedro Sánchez</td>
+                            <td>Lunes</td>
+                            <td>18:00 hs</td>
+                            <td>20</td>
+                            <td>
+                                <button class="btn-accion-tabla btn-editar">Modificar (CU12)</button>
+                                <button class="btn-accion-tabla btn-eliminar">Eliminar (CU14)</button>
+                                <button class="btn-accion-tabla btn-imprimir">Imprimir (CU15)</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Yoga Avanzado</td>
+                            <td>Laura Gómez</td>
+                            <td>Miércoles</td>
+                            <td>19:30 hs</td>
+                            <td>15</td>
+                            <td>
+                                <button class="btn-accion-tabla btn-editar">Modificar (CU12)</button>
+                                <button class="btn-accion-tabla btn-eliminar">Eliminar (CU14)</button>
+                                <button class="btn-accion-tabla btn-imprimir">Imprimir (CU15)</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

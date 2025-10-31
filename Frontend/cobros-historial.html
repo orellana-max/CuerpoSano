@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuerpo Sano - Historial de Cobros</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/empleado.css" />
+</head>
+<body>
+  <div class="dashboard-index">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+        <h1>CUERPO SANO</h1>
+      </div>
+      <nav class="menu-empleado">
+        <ul>
+          <li><a href="empleado.html">Inicio</a></li>
+          <li><a href="miembros_crear.html">Clientes</a></li>
+          <li><a href="membresias_crear.html">Membresías</a></li>
+          <li><a href="cobros.html">Registrar Cobro</a></li>
+          <li><a href="cobros_historial.html" class="active">Historial de Cobros</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Historial de Cobros</h2>
+      <p>Consultá, editá o eliminá los cobros registrados.</p>
+        <main class="main-content">
+            
+  <!-- === BUSCADOR Y FILTROS === -->
+  <section class="filtros-cobros">
+    <div class="busqueda">
+      <label for="buscarCliente">🔍 Buscar Cliente:</label>
+      <input type="text" id="buscarCliente" placeholder="Ej: Juan García" />
+    </div>
+
+    <div class="filtros">
+      <label for="metodoFiltro">Método de Pago:</label>
+      <select id="metodoFiltro">
+        <option value="">Todos</option>
+        <option value="Efectivo">Efectivo</option>
+        <option value="Tarjeta">Tarjeta</option>
+        <option value="Transferencia">Transferencia</option>
+      </select>
+
+      <label for="fechaFiltro">Fecha:</label>
+      <input type="date" id="fechaFiltro" />
+    </div>
+
+    <button class="btn-filtrar">Filtrar</button>
+    <button class="btn-limpiar">Limpiar</button>
+  </section>
+
+  <!-- === TABLA DE HISTORIAL === -->
+  <section class="lista-cobros">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Membresía</th>
+          <th>Monto</th>
+          <th>Fecha de Pago</th>
+          <th>Método</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaCobros">
+        <tr>
+          <td>CB001</td>
+          <td>Juan García</td>
+          <td>Mensual</td>
+          <td>$20.000</td>
+          <td>2025-10-20</td>
+          <td>Transferencia</td>
+          <td>
+            <button class="btn-editar">Editar</button>
+            <button class="btn-eliminar">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+  </div>
+<script>
+  // === FUNCIÓN DE FILTRADO DE TABLA ===
+  function filtrarTabla() {
+    const inputCliente = document.getElementById("buscarCliente").value.toLowerCase();
+    const metodoSeleccionado = document.getElementById("metodoFiltro").value.toLowerCase();
+    const fechaSeleccionada = document.getElementById("fechaFiltro").value;
+
+    const filas = document.querySelectorAll("#tablaCobros tr");
+
+    filas.forEach((fila) => {
+      const columnas = fila.querySelectorAll("td");
+      const cliente = columnas[1].textContent.toLowerCase();
+      const metodo = columnas[5].textContent.toLowerCase();
+      const fecha = columnas[4].textContent.trim();
+
+      let mostrar = true;
+
+      if (inputCliente && !cliente.includes(inputCliente)) {
+        mostrar = false;
+      }
+
+      if (metodoSeleccionado && metodo !== metodoSeleccionado) {
+        mostrar = false;
+      }
+
+      if (fechaSeleccionada && fecha !== fechaSeleccionada) {
+        mostrar = false;
+      }
+
+      fila.style.display = mostrar ? "" : "none";
+    });
+  }
+
+  // === FUNCIÓN PARA LIMPIAR FILTROS ===
+  function limpiarFiltros() {
+    document.getElementById("buscarCliente").value = "";
+    document.getElementById("metodoFiltro").value = "";
+    document.getElementById("fechaFiltro").value = "";
+    filtrarTabla();
+  }
+
+  // === EVENTOS ===
+  document.querySelector(".btn-filtrar").addEventListener("click", filtrarTabla);
+  document.querySelector(".btn-limpiar").addEventListener("click", limpiarFiltros);
+
+  // También filtramos automáticamente al escribir o cambiar los select
+  document.getElementById("buscarCliente").addEventListener("input", filtrarTabla);
+  document.getElementById("metodoFiltro").addEventListener("change", filtrarTabla);
+  document.getElementById("fechaFiltro").addEventListener("change", filtrarTabla);
+</script>
+
+</body>
+</html>

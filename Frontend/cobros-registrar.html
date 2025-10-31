@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuerpo Sano - Registrar Cobro</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/empleado.css" />
+</head>
+<body>
+  <div class="dashboard-index">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+        <h1>CUERPO SANO</h1>
+      </div>
+      <nav class="menu-empleado">
+        <ul>
+          <li><a href="empleado.html">Inicio</a></li>
+          <li><a href="miembros_crear.html">Clientes</a></li>
+          <li><a href="membresias_crear.html">Membresías</a></li>
+          <li><a href="cobros.html" class="active">Registrar Cobro</a></li>
+          <li><a href="cobros_historial.html">Historial de Cobros</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Registrar Cobro</h2>
+      <p>Completá los datos para registrar un nuevo pago realizado por el cliente.</p>
+
+      <section class="formulario-miembro">
+        <form id="formCobro">
+          <div class="form-grid">
+            <div>
+              <label for="cliente">Cliente:</label>
+              <select id="cliente" required>
+                <option value="">Seleccione un cliente...</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="membresia">Membresía:</label>
+              <select id="membresia" required>
+                <option value="">Seleccione una membresía...</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="monto">Monto a Abonar ($):</label>
+              <input type="number" id="monto" step="0.01" required />
+            </div>
+
+            <div>
+              <label for="fechaPago">Fecha de Pago:</label>
+              <input type="date" id="fechaPago" required />
+            </div>
+
+            <div>
+              <label for="metodoPago">Método de Pago:</label>
+              <select id="metodoPago" required onchange="mostrarCamposPago()">
+                <option value="">Seleccione...</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Tarjeta">Tarjeta (Crédito / Débito)</option>
+                <option value="Transferencia">Transferencia / Billetera Virtual</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Campos dinámicos según método -->
+          <div id="camposPago"></div>
+
+          <button type="submit" class="btn-login">Registrar Cobro</button>
+          <button type="reset" class="btn-login">Limpiar</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Información del gimnasio
+    const cuentaGimnasio = {
+      alias: "cuerposano.mp",
+      cbu: "0000003100041234567890",
+      titular: "Cuerpo Sano SRL",
+      banco: "Banco Nación",
+      linkPago: "https://mpago.la/2qGzHkA" // ejemplo
+    };
+
+    function mostrarCamposPago() {
+      const metodo = document.getElementById("metodoPago").value;
+      const campos = document.getElementById("camposPago");
+      campos.innerHTML = "";
+
+      if (metodo === "Transferencia") {
+        campos.innerHTML = `
+          <div class="form-grid metodo-pago">
+            <div>
+              <label for="tipoTransferencia">Tipo de Transferencia:</label>
+              <select id="tipoTransferencia" required>
+                <option value="">Seleccione...</option>
+                <option value="banco">Transferencia Bancaria</option>
+                <option value="billetera">Billetera Virtual</option>
+              </select>
+            </div>
+          </div>`;
+      } else if (metodo === "Tarjeta") {
+        campos.innerHTML = `
+          <div class="form-grid metodo-pago">
+            <div>
+              <label for="numeroTarjeta">Número de Tarjeta:</label>
+              <input type="text" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX" required />
+            </div>
+            <div>
+              <label for="titularTarjeta">Titular:</label>
+              <input type="text" id="titularTarjeta" required />
+            </div>
+            <div>
+              <label for="vencimiento">Vencimiento:</label>
+              <input type="month" id="vencimiento" required />
+            </div>
+            <div>
+              <label for="codigo">Código CVV:</label>
+              <input type="password" id="codigo" maxlength="4" required />
+            </div>
+          </div>`;
+      }
+    }
+
+    // Al enviar el formulario
+    document.getElementById("formCobro").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const metodo = document.getElementById("metodoPago").value;
+      const tipoTransf = document.getElementById("tipoTransferencia")?.value;
+
+      if (metodo === "Transferencia" && tipoTransf) {
+        // Abrir QR real o generado
+        if (cuentaGimnasio.linkPago) {
+          window.open(cuentaGimnasio.linkPago, "_blank");
+        } else {
+          const textoQR = `Alias: ${cuentaGimnasio.alias} - CBU: ${cuentaGimnasio.cbu}`;
+          const urlQR = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(textoQR)}&size=200x200`;
+          window.open(urlQR, "_blank");
+        }
+      } else {
+        alert("Cobro registrado correctamente.");
+      }
+    });
+  </script>
+</body>
+</html>

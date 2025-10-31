@@ -1,70 +1,26 @@
+/* entrenadores.css */
+
 /* =============================
    Estilos específicos para Entrenadores
    ============================= */
 
-.content-area {
-  margin-left: 250px;
-  padding: 40px;
-  background-color: #f5f9ff;
-  min-height: 100vh;
-  font-family: "Poppins", sans-serif;
-}
-
-/* Título principal */
-.content-area h2 {
-  color: #0078ff;
-  font-size: 28px;
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-/* Subtítulo */
-.content-area p {
-  text-align: center;
-  color: #555;
-  margin-bottom: 30px;
-}
-
 /* Contenedor del formulario */
 .trainer-form {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background: var(--gris);
   padding: 30px;
-  max-width: 950px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: auto;
   margin: 0 auto;
 }
 
 /* Título del formulario */
 .trainer-form h3 {
-  color: #0078ff;
+  color: var(--azul);
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-/* Campos */
-form {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-label {
-  font-weight: 600;
-  color: #333;
-}
-
-input[type="text"],
-input[type="tel"],
-input[type="date"],
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-}
 
 /* Botones */
 button {
@@ -102,108 +58,6 @@ button:hover {
 
 @media (max-width: 768px) {
   .content-area {
-    margin-left: 0;
-    padding: 20px;
-  }
-}
-
-/* === Sidebar con logo arriba y menú debajo === */
-/*
-.sidebar {
-  background-color: var(--azul);
-  color: var(--blanco);
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 2rem;
-}
-
-.sidebar .logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.sidebar .logo img {
-  width: 80px;
-  margin-bottom: 0.5rem;
-}
-
-.sidebar .logo h1 {
-  font-size: 1.5rem;
-}
-*/
-
-/* === Menú del empleado debajo del logo === */
-/*
-.menu-empleado {
-  width: 100%;
-  padding: 0 1rem;
-}
-
-.menu-empleado ul {
-  list-style: none;
-  padding: 0;
-}
-
-.menu-empleado li {
-  margin-bottom: 0.5rem;
-}
-
-.menu-empleado a {
-  display: block;
-  padding: 0.75rem 1rem;
-  background-color: var(--celeste);
-  color: var(--blanco);
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-.menu-empleado a:hover {
-  background-color: #0090dd;
-}
-*/
-
-/* === Responsivo: sidebar horizontal y botones más pequeños === */
-@media (max-width: 768px) {
-  .dashboard-index {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
     padding: 1rem;
-  }
-
-  .sidebar .logo {
-    margin-bottom: 0;
-  }
-
-  .menu-empleado {
-    padding: 0;
-    margin-top: 0;
-  }
-
-  .menu-empleado ul {
-    display: display-box;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .menu-empleado a {
-    font-size: 0.8rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 4px;
   }
 }

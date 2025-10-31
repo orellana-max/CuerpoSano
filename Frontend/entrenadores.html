@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Entrenadores - Cuerpo Sano</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/entrenadores.css" />
     <link rel="stylesheet" href="css/empleado.css" />
+    <link rel="stylesheet" href="css/socios.css" />
 </head>
 
 <body>
     <div class="dashboard-index">
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar empleado">
             <div class="logo">
                 <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
                 <h1>CUERPO SANO</h1>
@@ -33,81 +33,90 @@
             </nav>
         </aside>
 
-
         <!-- Main Content -->
-        <div class="content-area">
+        <main class="main-content">
             <h2>Gestión de Entrenadores</h2>
             <p>Registrá, consultá o gestioná los datos de los entrenadores del gimnasio.</p>
 
-            <div class="trainer-form">
+            <section class="formulario-general">
                 <h3>Registrar nuevo entrenador</h3>
-                <form action="#" method="post">
-                    <div>
-                        <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                <form id="form-entrenadores" action="#" method="post">
+                    <div class="form-grid">
+                        <div>
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                        </div>
+                        <div>
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" name="direccion" placeholder="Calle, número, ciudad"
+                                required>
+                        </div>
+                        <div>
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 1234-5678" required>
+                        </div>
+                        <div>
+                            <label for="certificacion">Certificación</label>
+                            <input type="text" id="certificacion" name="certificacion"
+                                placeholder="Ej: Entrenador Personal Nivel 2" required>
+                        </div>
+                        <div>
+                            <label for="fechaCert">Fecha de certificación</label>
+                            <input type="date" id="fechaCert" name="fechaCert" required>
+                        </div>
+                        <div>
+                            <label for="vencimiento">Vencimiento de certificación</label>
+                            <input type="date" id="vencimiento" name="vencimiento">
+                        </div>
+                        <div>
+                            <label for="institucion">Institución emisora</label>
+                            <input type="text" id="institucion" name="institucion"
+                                placeholder="Ej: Instituto Nacional del Deporte">
+                        </div>
+                        <div class="grid-comentarios">
+                            <label for="comentarios">Comentarios</label>
+                            <textarea id="comentarios" name="comentarios" rows="3"
+                                placeholder="Observaciones adicionales..."></textarea>
+                        </div>
                     </div>
-                    <div>
-                        <label for="direccion">Dirección</label>
-                        <input type="text" id="direccion" name="direccion" placeholder="Calle, número, ciudad" required>
-                    </div>
-                    <div>
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 1234-5678" required>
-                    </div>
-                    <div>
-                        <label for="certificacion">Certificación</label>
-                        <input type="text" id="certificacion" name="certificacion"
-                            placeholder="Ej: Entrenador Personal Nivel 2" required>
-                    </div>
-                    <div>
-                        <label for="fechaCert">Fecha de certificación</label>
-                        <input type="date" id="fechaCert" name="fechaCert" required>
-                    </div>
-                    <div>
-                        <label for="vencimiento">Vencimiento de certificación</label>
-                        <input type="date" id="vencimiento" name="vencimiento">
-                    </div>
-                    <div>
-                        <label for="institucion">Institución emisora</label>
-                        <input type="text" id="institucion" name="institucion"
-                            placeholder="Ej: Instituto Nacional del Deporte">
-                    </div>
-                    <div>
-                        <label for="comentarios">Comentarios</label>
-                        <textarea id="comentarios" name="comentarios" rows="3"
-                            placeholder="Observaciones adicionales..."></textarea>
-                    </div>
-                    <div>
-                        <button type="submit">Registrar Entrenador</button>
-                        <button type="reset">Limpiar</button>
-                    </div>
-                </form>
-            </div>
 
-            <table class="trainer-table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Teléfono</th>
-                        <th>Certificación</th>
-                        <th>Institución</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Juan Pérez</td>
-                        <td>+54 9 11 1234-5678</td>
-                        <td>Entrenador Nivel 2</td>
-                        <td>Instituto del Deporte</td>
-                        <td>
-                            <button>Editar</button>
-                            <button>Eliminar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                    <button type="submit" class="btn-login">Registrar Entrenador</button>
+                    <button type="reset" class="btn-login">Limpiar</button>
+                </form>
+            </section>
+
+            <!-- Tabla de entrenadores -->
+            <section id="lista-trainer" class="bloque-tabla">
+                <h3 class="titulo-tabla">Entrenadores Registrados</h3>
+                <div class="tabla-scroll">
+                    <table class="trainer-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Teléfono</th>
+                                <th>Certificación</th>
+                                <th>Institución</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Juan Pérez</td>
+                                <td>+54 9 11 1234-5678</td>
+                                <td>Entrenador Nivel 2</td>
+                                <td>Instituto del Deporte</td>
+                                <td>
+                                    <button>Editar</button>
+                                    <button>Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
         </div>
+    </div>
 </body>
 
 </html>

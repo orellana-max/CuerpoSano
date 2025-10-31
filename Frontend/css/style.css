@@ -1,18 +1,31 @@
-/* === Variables globales === */
+/* style.css */
+
+/* ================================
+   🎨 VARIABLES GLOBALES
+   ================================ */
 :root {
     --azul: #007bff;
     --celeste: #00c6ff;
     --gris-claro: #f4faff;
     --gris-oscuro: #333;
     --blanco: #ffffff;
+    --verde: #28a745;
+    --verde-oscuro: #1e7e34;
     --sombra: rgba(0, 0, 0, 0.1);
 }
 
+/* ================================
+   🔒 UTILIDADES boton oculto
+   ================================ */
 .oculto {
-    display: none;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
 
-/* === Reset básico === */
+/* ================================
+   🔄 RESET BÁSICO
+   ================================ */
 * {
     margin: 0;
     padding: 0;
@@ -25,12 +38,20 @@ body {
     color: var(--gris-oscuro);
 }
 
-/* === Estilos del index === */
+/* ================================
+   🏠 LAYOUT DEL INDEX
+   ================================ */
 .dashboard-index {
     display: flex;
-    height: 100vh;
+    align-items: stretch;
+    /* ✅ Estira los hijos verticalmente */
+    min-height: 100vh;
+    /* ✅ Asegura altura mínima de pantalla */
 }
 
+/* ================================
+    BARRA LATERAL
+   ================================ */
 .sidebar {
     background-color: var(--azul);
     color: var(--blanco);
@@ -40,6 +61,11 @@ body {
     align-items: center;
     justify-content: flex-start;
     padding-top: 2rem;
+    flex-shrink: 0;
+    /* ✅ Evita que se achique si el main crece */
+    height: auto;
+    /* ✅ Permite que crezca si el contenedor lo requiere */
+    min-height: 100%;
 }
 
 .sidebar .logo {
@@ -60,6 +86,9 @@ body {
     font-size: 1.5rem;
 }
 
+/* ================================
+    Contenido Principal
+   ================================ */
 .main-content {
     flex: 1;
     display: flex;
@@ -71,30 +100,53 @@ body {
 }
 
 .main-content h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     font-size: 2rem;
     color: var(--azul);
 }
 
 .main-content p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.btn-ingresar {
+.main-content button.btn-login {
+    padding: 10px 20px;
+    font-size: 16px;
     background-color: var(--azul);
-    color: var(--blanco);
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
     font-weight: bold;
+    text-decoration: none;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
-
-.btn-ingresar:hover {
-    background-color: #005f9e;
+.content-btn-acciones {
+  display: flex;
+  gap: 5px;
+  padding: 0.5rem;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0.1rem auto;
 }
 
-/* === Estilos del login === */
+.content-btn-acciones button {
+  flex: 1 1 auto; /* ✅ se estiran o contraen según el texto */
+  padding: 10px 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* ✅ evita que se corten en varias líneas */
+}
+
+/* ================================
+   🔐 LOGIN
+   ================================ */
 .login-container {
     width: 100%;
     max-width: 400px;
@@ -131,31 +183,13 @@ body {
     font-weight: bold;
 }
 
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-label {
-    text-align: left;
-    font-weight: bold;
-    color: var(--gris-oscuro);
-}
-
-input,
-select {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-}
-
+/* ================================
+   🎯 BOTONES
+   ================================ */
 .btn-login {
     background-color: var(--azul);
     color: var(--blanco);
-    padding: 0.75rem;
+    padding: 10px 20px;
     border: none;
     border-radius: 6px;
     font-weight: bold;
@@ -167,25 +201,26 @@ select {
 }
 
 .btn-crear-nuevo {
+    background-color: var(--verde);
+    color: var(--blanco);
     padding: 10px 20px;
-    background-color: #28a745;
-    /* Botón verde para "Crear" */
-    color: white;
     border: none;
     border-radius: 6px;
-    cursor: pointer;
     font-weight: bold;
+    cursor: pointer;
     text-decoration: none;
     text-align: center;
     transition: background-color 0.3s ease;
+    font-size: 15px;
 }
 
 .btn-crear-nuevo:hover {
-    background-color: #1e7e34;
+    background-color: var(--verde-oscuro);
 }
 
-
-/* === Modal flotante de login === */
+/* ================================
+   🪟 MODAL DE LOGIN
+   ================================ */
 .modal {
     position: fixed;
     top: 0;
@@ -194,7 +229,6 @@ select {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
-    /* oculto por defecto */
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -211,7 +245,6 @@ select {
     text-align: center;
 }
 
-/* Botón de cerrar modal */
 .close-btn {
     position: absolute;
     top: 10px;
@@ -245,21 +278,140 @@ select {
     font-size: 1rem;
 }
 
-.btn-login {
+/* ================================
+   🧾 FORMULARIOS
+   ================================ */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    text-align: left;
+    font-weight: bold;
+    color: var(--gris-oscuro);
+}
+
+input,
+select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* ================================
+   🧾 CAMPOS DE FORMULARIO COMUNES
+   ================================ */
+
+/* ╔═══════════════════════════════════════════════════════╗
+   ║ 📦 FORMULARIOS GENERALES                              ║
+   ║ Usar .formulario-general como base para cualquier     ║
+   ║ sección de formulario (socios, entrenadores, clases). ║
+   ╚═══════════════════════════════════════════════════════╝ */
+.formulario-general {
+    background-color: var(--gris);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.formulario-general h3 {
+    color: var(--azul);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario-general label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.formulario-general input,
+.formulario-general select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.form-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 10px;
+    align-items: start;
+    justify-items: stretch
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.form-grid label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--gris-oscuro);
+}
+
+/* 🧩 Campo de comentarios en grid */
+.grid-comentarios {
+    grid-column: span 2;
+}
+
+/* ================================
+   📊 TABLAS CON SCROLL RESPONSIVO
+   ================================ */
+.bloque-tabla {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.titulo-tabla {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.tabla-scroll {
+    width: 100%;
+}
+
+.tabla-scroll table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.tabla-scroll th,
+.tabla-scroll td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tabla-scroll th {
     background-color: var(--azul);
     color: var(--blanco);
-    padding: 1rem;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
 }
 
-.btn-login:hover {
-    background-color: #005f9e;
-}
-
-/* === Estilos responsivos === */
+/* ================================
+   📱 RESPONSIVO
+   ================================ */
 @media (max-width: 768px) {
     .dashboard-index {
         flex-direction: column;
@@ -267,7 +419,7 @@ select {
 
     .sidebar {
         width: 100%;
-        height: 230px;
+        height: auto;
         flex-direction: row;
         justify-content: space-around;
     }
@@ -276,8 +428,34 @@ select {
         padding: 1rem;
     }
 
+    .form-grid {
+        grid-template-columns: 1fr;
+        /* una sola columna */
+    }
+
+    /* ✅ En mobile: ocupa solo una columna */
+    .grid-comentarios {
+        grid-column: span 1;
+    }
+
+    .tabla-scroll {
+        overflow-x: auto;
+    }
+
+    .tabla-scroll table {
+        min-width: 600px;
+    }
+
     .login-box {
         padding: 1rem;
     }
+    .content-btn-acciones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .content-btn-acciones button {
+    width: 100%;
+  }
 
 }

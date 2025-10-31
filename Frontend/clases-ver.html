@@ -1,10 +1,10 @@
-<!DOCTYPE html> <!--Clase.html-->
+<!DOCTYPE html> <!--clases-ver.html-->
 <html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestión de Clases - Cuerpo Sano</title>
+    <title>Gestión de Clases - Ver - Cuerpo Sano</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/empleado.css" />
     <link rel="stylesheet" href="css/socios.css" />
@@ -41,21 +41,21 @@
             <!-- Botones de acción -->
             <div class="content-btn-acciones">
                 <button id="btnNuevaClase" class="btn-crear-nuevo">Crear Nueva Clase</button>
-                <button id="btnVerListaClases" class="btn-login oculto">Ver lista de Clases</button>
+                <button id="btnVerListaClases" class="btn-login">Ver lista de Clases</button>
             </div>
 
+            <!-- Lista de socios Inscriptos-->
             <section id="listaSocios" class="bloque-tabla">
-                <h3 class="titulo-tabla">Clases Registradas</h3>
+                <h3 class="titulo-tabla">Socios Inscriptos</h3>
                 <div class="tabla-scroll">
                     <table class="tabla-generica">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Nombre</th>
-                                <th>Horario</th>
-                                <th>Cupos</th>
-                                <th>Entrenador</th>
-                                <th>Actividadad</th>
+                                <th>DNI</th>
+                                <th>Teléfono</th>
+                                <th>Email</th>
+                                <th>Membresía</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -68,6 +68,12 @@
 
         </main>
     </div>
+    <script>
+        const lista = document.getElementById("listaSocios");
+        const tabla = document.getElementById("tabla-socios");
+
+
+    </script>
 </body>
 
 </html>

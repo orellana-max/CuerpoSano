@@ -1,3 +1,5 @@
+/* actividades.css */
+
 /* =============================
    Estilos específicos para Actividades
    ============================= */
@@ -127,43 +129,4 @@ th {
 
 .Imprimir {
   background-color: var(--celeste);
-}
-
-
-/* === Responsivo: sidebar horizontal y botones más pequeños === */
-@media (max-width: 768px) {
-  .dashboard-index {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  .sidebar .logo {
-    margin-bottom: 0;
-  }
-
-  .menu-empleado {
-    padding: 0;
-    margin-top: 0;
-  }
-
-  .menu-empleado ul {
-    display: display-box;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .menu-empleado a {
-    font-size: 0.8rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 4px;
-  }
 }

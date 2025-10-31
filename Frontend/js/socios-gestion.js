@@ -122,7 +122,7 @@
             });
         }
 
-        // {👁️ Ver socio}
+        // {👁️ Accion Ver socio}
         function verSocio(index) {
             const socios = JSON.parse(localStorage.getItem("sociosRegistrados")) || [];
             socioActual = socios[index];
@@ -136,7 +136,7 @@
             mostrarBotonVerLista();
         }
 
-        // {✏️ Editar socio}
+        // {✏️ Accion Editar socio}
         function editarSocio(index) {
             verSocio(index);
             modo = "editar";
@@ -144,7 +144,7 @@
             mostrarBotonVerLista();
         }
 
-        // {🗑️ Eliminar socio}
+        // {🗑️ Accion Eliminar socio}
         function eliminarSocio(index) {
             if (!confirm("¿Estás seguro de que querés eliminar este socio?")) return;
             const socios = JSON.parse(localStorage.getItem("sociosRegistrados")) || [];

@@ -1,9 +1,16 @@
-.oculto {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-}
+/* sociosM.css */
 
+.acciones-socios {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 1rem;
+  margin-top: 10px;
+  max-width: 500px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .contenedor-identidad {
   display: flex;
@@ -26,11 +33,6 @@
 
 .acciones-formulario button {
   margin-right: 0.5rem;
-}
-
-.btn-login {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 /* Contenedor de botones en la celda */
@@ -87,19 +89,6 @@ td button {
   /* opcional: límite para evitar que se desborde en pantallas grandes */
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* Dos columnas iguales */
-  gap: 15px;
-  width: 100%;
-  /* Asegura que ocupe todo el ancho disponible */
-  justify-items: stretch;
-  /* Estira los divs para que se alineen */
-  align-items: start;
-  /* Alinea los elementos al inicio verticalmente */
-}
-
 .formulario-socios label {
   display: block;
   font-weight: bold;
@@ -114,29 +103,27 @@ td button {
   border: 1px solid #ccc;
 }
 
-/* === Tabla de Socios === */
-.lista-socios table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 30px;
-}
-
-.lista-socios th,
-.lista-socios td {
-  padding: 8px;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-.lista-socios th {
-  background-color: #0078ff;
-  color: white;
-}
-
 @media (max-width: 768px) {
-  .form-grid {
-    grid-template-columns: 1fr;
-    /* una sola columna */
+
+  .acciones-socios {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 0.5rem;
+    margin-top: 1px;
+    max-width: 500px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lista-socios {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .lista-socios table {
+    min-width: 600px;
   }
 
   .btn-login {

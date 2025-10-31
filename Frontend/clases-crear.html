@@ -1,0 +1,92 @@
+<!DOCTYPE html> <!--clases-crear.html-->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Clases - Nuevo - Cuerpo Sano</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/empleado.css" />
+    <link rel="stylesheet" href="css/socios.css" />
+</head>
+
+<body>
+    <div class="dashboard-index">
+        <!-- Sidebar -->
+        <aside class="sidebar empleado">
+            <div class="logo">
+                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+                <h1>CUERPO SANO</h1>
+            </div>
+            <nav class="menu-empleado">
+                <ul>
+                    <li><a href="empleado.html">Home</a></li>
+                    <li><a href="socios.html">Socios</a></li>
+                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="membresias.html">Membresías</a></li>
+                    <li><a href="clases.html" class="active">Clases</a></li>
+                    <li><a href="actividades.html">Actividades</a></li>
+                    <li><a href="#cobros">Cobros</a></li>
+                    <li><a href="#asistencia">Registrar Asistencia</a></li>
+                    <li><a href="index.html" class="btn-salir">Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>Administra una Clase</h2>
+            <p>Administrá las clases del gimnasio: registro, edición, eliminacion de una clase.</p>
+
+            <!-- Botones de acción -->
+            <div class="content-btn-acciones">
+                <button id="btnNuevaClase" class="btn-crear-nuevo oculto">Crear Nueva Clase</button>
+                <button id="btnVerListaClases" class="btn-login">Ver lista de Clases</button>
+            </div>
+
+            <!-- Formulario -->
+            <section id="formularioSocios" class="formulario-general">
+                <h3>Registrar nueva Clase</h3>
+                <form id="form-clase">
+                    <div class="form-grid">
+                        <div>
+                            <label for="idClase">ID Clase:</label>
+                            <input type="text" id="idClase" disabled />
+                        </div>
+                        <div>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" required />
+                        </div>
+                        <div>
+                            <label for="horario">Horario:</label>
+                            <input type="text" id="horario" required />
+                        </div>
+                        <div>
+                            <label for="cupos">Cantidad de Cupos:</label>
+                            <input type="number" id="cupos" required />
+                        </div>
+                        <div>
+                            <label for="entrenador">Entrenador:</label>
+                            <input type="text" id="entrenador" required />
+                        </div>
+                        <div>
+                            <label for="actividad">actividad:</label>
+                            <input type="text" id="actividad" required />
+                        </div>
+                    </div>
+
+                    <!-- Botones del formulario -->
+                    <div class="content-btn-acciones">
+                        <button type="submit" id="btnGuardar" class="btn-login">Guardar</button>
+                        <button type="reset" id="btnLimpiar" class="btn-login">Limpiar</button>
+                        <button type="button" id="btnModificar" class="btn-login oculto">Modificar datos</button>
+                        <button type="button" id="btnEliminar" class="btn-login btn-eliminar oculto">Eliminar</button>
+                    </div>
+                </form>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

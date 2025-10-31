@@ -18,12 +18,15 @@
         <h1>CUERPO SANO</h1>
       </div>
     </aside>
+    
     <!-- contenido principal  -->
     <main class="main-content">
       <h2>Bienvenido al sistema de gestión</h2>
       <p>Control total del gimnasio desde un solo lugar</p>
-      <!-- <a href="login.html" class="btn-ingresar">Ingresar al sistema</a> -->
-      <a href="#" class="btn-ingresar" onclick="abrirModal()">Ingresar al sistema</a>
+
+      <!-- Botón para abrir el modal -->
+      <button id="btnModalLogin" class="btn-login">Ingresar al sistema</button>
+
     </main>
   </div>
 
@@ -53,12 +56,17 @@
     function abrirModal() {
       document.getElementById('loginModal').style.display = 'flex';
     }
+
+    document.getElementById("btnModalLogin").addEventListener("click", abrirModal);
+
     function cerrarModal() {
       document.getElementById('loginModal').style.display = 'none';
     }
+
     window.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') cerrarModal();
     });
+
     window.addEventListener('click', function (e) {
       const modal = document.getElementById('loginModal');
       if (e.target === modal) cerrarModal();

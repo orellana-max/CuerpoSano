@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuerpo Sano - Gestión de Membresías</title>
+    <title>Gestión de Membresías - Cuerpo Sano</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/socios.css" /> 
     <link rel="stylesheet" href="css/empleado.css" />
-    <style>
-        /* Estilos para el botón de acción principal */
-        .encabezado-tabla {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="css/socios.css" />
 </head>
+
 <body>
     <div class="dashboard-index">
-        <aside class="sidebar">
+        <aside class="sidebar empleado">
             <div class="logo">
                 <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
                 <h1>CUERPO SANO</h1>
@@ -43,15 +35,13 @@
         <main class="main-content">
             <h2>Tipos de Membresía Disponibles</h2>
             <p>Lista de todos los planes de membresía que pueden ser adquiridos por los clientes.</p>
+            <h3>Gestión de Tipos de Membresía</h3>
+
+            <div class="content-btn-acciones">
+                <a href="membresias-crear.html" class="btn-crear-nuevo">+ Crear Nueva Membresía</a>
+            </div>
 
             <section class="lista-membresias">
-                <div class="encabezado-tabla">
-                    <h3>Gestión de Tipos de Membresía</h3>
-                    <a href="membresias-crear.html" class="btn-crear-nuevo">
-                        + Crear Nueva Membresía
-                    </a>
-                </div>
-
                 <table>
                     <thead>
                         <tr>
@@ -100,4 +90,5 @@
         </main>
     </div>
 </body>
+
 </html>

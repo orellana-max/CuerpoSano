@@ -4,30 +4,31 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuerpo Sano - Gestión de Socios</title>
+    <title>Gestión de Socios - Cuerpo Sano</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/empleado.css" />
-    <link rel="stylesheet" href="css/sociosM.css" />
+    <link rel="stylesheet" href="css/socios.css" />
 </head>
 
 <body>
     <div class="dashboard-index">
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar empleado">
             <div class="logo">
                 <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
                 <h1>CUERPO SANO</h1>
             </div>
             <nav class="menu-empleado">
                 <ul>
-                    <li><a href="empleado.html">Inicio</a></li>
-                    <li><a href="#">Entrenadores</a></li>
-                    <li><a href="#">Membresías</a></li>
-                    <li><a href="#">Clases</a></li>
-                    <li><a href="#">Actividades</a></li>
-                    <li><a href="#cobro">Cobros</a></li>
+                    <li><a href="empleado.html">Home</a></li>
+                    <li><a href="socios.html" class="active">Socios</a></li>
+                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="membresias.html">Membresías</a></li>
+                    <li><a href="clases.html">Clases</a></li>
+                    <li><a href="actividades.html">Actividades</a></li>
+                    <li><a href="#cobros">Cobros</a></li>
                     <li><a href="#asistencia">Registrar Asistencia</a></li>
-                    <li><a href="index.html" class="btn-salir">Salir</a></li> <!-- 🔹 Botón agregado -->
+                    <li><a href="index.html" class="btn-salir">Salir</a></li>
                 </ul>
             </nav>
         </aside>
@@ -38,9 +39,10 @@
             <p>Consultá, registrá o modificá los datos de los socios del gimnasio.</p>
 
             <!-- Botones de acción -->
-            <div class="acciones-socios">
-                <button id="btnNuevoSocio" class="btn-login">Registrar nuevo socio</button>
+            <div class="content-btn-acciones">
+                <button id="btnNuevoSocio" class="btn-crear-nuevo">Registrar nuevo socio</button>
                 <button id="btnVerLista" class="btn-login oculto">Ver lista de socios</button>
+                <button id="btnVerLista2" class="btn-login">Ver lista de socios</button>
             </div>
 
             <!-- Sección de identidad -->
@@ -55,6 +57,7 @@
 
             <!-- Formulario -->
             <section id="formularioSocios" class="formulario-socios oculto">
+                <h3>Registrar nuevo Socio</h3>
                 <form id="form-socios">
                     <div class="form-grid">
                         <div>
@@ -107,23 +110,25 @@
             </section>
 
             <!-- Lista de socios -->
-            <section id="listaSocios" class="lista-socios">
-                <h3>Socios Registrados</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>DNI</th>
-                            <th>Teléfono</th>
-                            <th>Email</th>
-                            <th>Membresía</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabla-socios">
-                        <!-- Filas generadas dinámicamente -->
-                    </tbody>
-                </table>
+            <section id="listaSocios" class="bloque-tabla">
+                <h3 class="titulo-tabla">Socios Registrados</h3>
+                <div class="tabla-scroll">
+                    <table class="tabla-generica">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>DNI</th>
+                                <th>Teléfono</th>
+                                <th>Email</th>
+                                <th>Membresía</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-socios">
+                            <!-- Filas generadas dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </main>
     </div>

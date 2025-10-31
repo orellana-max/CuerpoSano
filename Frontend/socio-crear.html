@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuerpo Sano - Registrar Nuevo Miembro</title>
+    <title>Cuerpo Sano - Registrar Nuevo Socio</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/empleado.css" />
-    <link rel="stylesheet" href="css/socios.css" /> 
+    <link rel="stylesheet" href="css/socios.css" />
 </head>
+
 <body>
     <div class="dashboard-index">
-        <aside class="sidebar">
+        <!-- Sidebar -->
+        <aside class="sidebar empleado">
             <div class="logo">
                 <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
                 <h1>CUERPO SANO</h1>
@@ -30,15 +33,16 @@
             </nav>
         </aside>
 
+        <!-- Main Content -->
         <main class="main-content">
-            <h2>Registrar Nuevo Miembro</h2>
+            <h2>Registrar Nuevo Socio</h2>
             <p>Completá los datos del socio para registrarlo en el gimnasio.</p>
 
-            <section class="formulario-miembro">
+             <!-- Formulario -->
+            <section class="formulario-general">
                 <h3>Formulario de Registro</h3>
                 <form id="formMiembro">
                     <div class="form-grid">
-                        
                         <div>
                             <label for="nombre">Nombre y Apellido:</label>
                             <input type="text" id="nombre" required />
@@ -72,14 +76,16 @@
                         <div class="campo-doble">
                             <label for="membresia">Tipo de Membresía:</label>
                             <select id="membresia" required>
-                                <option value="">Seleccione una membresía...</option> <!--Comentario Melany: SON PARA SIMULAR. SACARLO 
+                                <option value="">Seleccione una membresía...</option>
+                                <!--Comentario Melany: SON PARA SIMULAR. SACARLO 
                                                                                                 APLIQUEMOS LAS BASE DE DATOS-->
-                                <option value="mensual-estandar">Plan Mensual Estándar</option> 
+                                <option value="mensual-estandar">Plan Mensual Estándar</option>
                                 <option value="anual-premium">Plan Anual Premium</option>
                                 <option value="clase-unica">Plan Clase Única</option>
-                                </select>
+                            </select>
                             <p class="nota-campo">
-                                Las membresías disponibles se gestionan en la sección <a href="membresias.html">Membresías</a>.
+                                Las membresías disponibles se gestionan en la sección <a
+                                    href="membresias.html">Membresías</a>.
                             </p>
                         </div>
 
@@ -88,11 +94,11 @@
                             <input type="file" id="foto" accept="image/*" />
                         </div>
 
-                        <div>
+                        <div class="grid-comentarios">
                             <label for="infoMedica">Info. Médica (Autorización):</label>
-                            <textarea id="infoMedica" placeholder="Autorización médica para actividades de alta intensidad"></textarea>
+                            <textarea id="infoMedica"
+                                placeholder="Autorización médica para actividades de alta intensidad"></textarea>
                         </div>
-
                     </div>
 
                     <button type="submit" class="btn-login">Registrar Socio y Cobro</button>
@@ -102,4 +108,5 @@
         </main>
     </div>
 </body>
+
 </html>

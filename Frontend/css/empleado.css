@@ -1,35 +1,23 @@
-/* === Sidebar con logo arriba y menú debajo === */
-.sidebar {
-  background-color: var(--azul);
-  color: var(--blanco);
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 2rem 1rem;
+/* ════════════════════════════════════════════════════════════════════════
+   📦 SIDEBAR DEL EMPLEADO
+   Hereda estructura base desde style.css y personaliza menú y botones
+   ─────────────────────────────────────────────────────────────────────── */
+.sidebar.empleado {
   gap: 2rem;
+  padding: 2rem 1rem;
 }
 
-.sidebar .logo {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: flex-start;
-}
-
-.sidebar .logo img {
-  width: 80px;
+.sidebar.empleado .logo img {
   margin-bottom: 0.5rem;
 }
 
-.sidebar .logo h1 {
+.sidebar.empleado .logo h1 {
   font-size: 1.5rem;
 }
 
-/* === Menú del empleado debajo del logo === */
+/* ════════════════════════════════════════════════════════════════════════
+   📋 MENÚ DEL EMPLEADO
+   ─────────────────────────────────────────────────────────────────────── */
 .menu-empleado {
   width: 100%;
   padding: 0 1rem;
@@ -61,11 +49,22 @@
   background-color: #0090dd;
 }
 
+.menu-empleado a.active {
+  background-color: var(--azul);
+  color: var(--blanco);
+  border: 4px solid var(--blanco);
+  font-weight: bold;
+  box-shadow: 0 0 6px var(--sombra);
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   🔚 BOTÓN SALIR
+   ─────────────────────────────────────────────────────────────────────── */
 .menu-empleado .btn-salir {
-  background-color: #007bbd; /* celeste más oscuro */
+  background-color: #007bbd;
   color: var(--blanco);
   font-weight: bold;
-  border: 2px solid var(--celeste); /* borde celeste */
+  border: 2px solid var(--celeste);
   border-radius: 6px;
   padding: 0.75rem 1rem;
   text-align: center;
@@ -74,36 +73,30 @@
 }
 
 .menu-empleado .btn-salir:hover {
-  background-color: #006aa3; /* aún más oscuro al pasar el mouse */
-  border-color: #00a0e0; /* tono más vibrante en hover */
+  background-color: #006aa3;
+  border-color: #00a0e0;
 }
 
-
-/* === Responsivo: sidebar horizontal y botones más pequeños === */
+/* ════════════════════════════════════════════════════════════════════════
+   📱 RESPONSIVO EMPLEADO
+   Sidebar horizontal y menú adaptado
+   ─────────────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .dashboard-index {
-    flex-direction: column;
-  }
-
-  .sidebar {
+  .sidebar.empleado {
     flex-direction: row;
-    display: flex;
     width: 100%;
     height: auto;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 1rem;
     padding: 1rem;
   }
 
-  .sidebar .logo {
-    height: 100%;
+  .sidebar.empleado .logo {
     flex: 1;
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    justify-content: center;
   }
 
   .menu-empleado {
@@ -117,10 +110,6 @@
     margin: 0;
   }
 
-  .menu-empleado li {
-    margin-bottom: 0.5rem;
-  }
-
   .menu-empleado a {
     font-size: 0.8rem;
     padding: 0.5rem 0.75rem;
@@ -128,4 +117,3 @@
     text-align: center;
   }
 }
-

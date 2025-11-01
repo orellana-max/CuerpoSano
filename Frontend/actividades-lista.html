@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Actividades - Cuerpo Sano</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/actividades.css"/>
+    <link rel="stylesheet" href="css/empleado.css" />
+    
+</head>
+
+<body>
+    <div class="dashboard-index">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+                <h1>CUERPO SANO</h1>
+            </div>
+            <nav class="menu-empleado">
+                <ul>
+                    <li><a href="empleado.html">Home</a></li>
+                    <li><a href="socios.html">Socios</a></li>
+                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="membresias.html">Membresías</a></li>
+                    <li><a href="#clases">Clases</a></li>
+                    <li><a href="actividades.html" class="active">Actividades</a></li>
+                    <li><a href="#cobros">Cobros</a></li>
+                    <li><a href="#asistencia">Registrar Asistencia</a></li>
+                    <li><a href="index.html" class="btn-salir">Salir</a></li> <!-- 🔹 Botón agregado -->
+                </ul>
+            </nav>
+        </aside>
+
+    
+   <!-- Main Content -->
+    <div class="content-area">
+        <h2>Gestión de Actividades</h2>
+        <p>Registrá, consultá o gestioná las actividades del gimnasio.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Fechas</th>
+                    <th>Horario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Yoga</td>
+                    <td>Grupal</td>
+                    <td>01/03/2025 - 30/06/2025</td>
+                    <td>Lunes y Miércoles 18:00</td>
+                    <td class="acciones">
+              	  <button class="editar">Editar</button>
+              	  <button class="eliminar">Eliminar</button>
+              	  <button class="imprimir">Imprimir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

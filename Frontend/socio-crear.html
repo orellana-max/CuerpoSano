@@ -80,17 +80,12 @@
 
                         <div>
                             <label for="foto">Foto del Socio:</label>
-                            <input type="file" id="foto" accept="image/*" />
-                        </div>
-
-                        <div>
-                            <label for="infoMedica">Info. Médica (Autorización):</label>
-                            <textarea id="infoMedica" placeholder="Autorización médica para actividades de alta intensidad"></textarea>
-                        </div>
+                            <input type="file" id="foto" accept="image/*" required />
+                        </div>      
 
                     </div>
 
-                    <button type="submit" class="btn-login">Registrar Socio y Cobro</button>
+                    <button type="submit" class="btn-login">Siguiente</button>
                     <button type="reset" class="btn-login">Limpiar</button>
                 </form>
             </section>
@@ -116,7 +111,7 @@
             localStorage.setItem("socioNuevo", JSON.stringify(socio));
 
             // Redirige a la página de confirmación
-            window.location.href = "registro_exitoso.html";
+            window.location.href = "cobros-registrar.html";
         });
     </script>
 </body>

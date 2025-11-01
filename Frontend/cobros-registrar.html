@@ -9,7 +9,6 @@
 </head>
 <body>
   <div class="dashboard-index">
-    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="logo">
         <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
@@ -18,15 +17,14 @@
       <nav class="menu-empleado">
         <ul>
           <li><a href="empleado.html">Inicio</a></li>
-          <li><a href="miembros_crear.html">Clientes</a></li>
-          <li><a href="membresias_crear.html">Membresías</a></li>
+          <li><a href="socios.html">Clientes</a></li>
+          <li><a href="membresias.html">Membresías</a></li>
           <li><a href="cobros.html" class="active">Registrar Cobro</a></li>
           <li><a href="cobros_historial.html">Historial de Cobros</a></li>
         </ul>
       </nav>
     </aside>
 
-    <!-- Main Content -->
     <main class="main-content">
       <h2>Registrar Cobro</h2>
       <p>Completá los datos para registrar un nuevo pago realizado por el cliente.</p>
@@ -69,7 +67,6 @@
             </div>
           </div>
 
-          <!-- Campos dinámicos según método -->
           <div id="camposPago"></div>
 
           <button type="submit" class="btn-login">Registrar Cobro</button>
@@ -79,15 +76,13 @@
     </main>
   </div>
 
-  <!-- JavaScript -->
   <script>
-    // Información del gimnasio
     const cuentaGimnasio = {
       alias: "cuerposano.mp",
       cbu: "0000003100041234567890",
       titular: "Cuerpo Sano SRL",
       banco: "Banco Nación",
-      linkPago: "https://mpago.la/2qGzHkA" // ejemplo
+      linkPago: "https://mpago.la/2qGzHkA"
     };
 
     function mostrarCamposPago() {
@@ -130,7 +125,39 @@
       }
     }
 
-    // Al enviar el formulario
+    // === Recuperar datos del socio recién registrado ===
+    window.addEventListener("DOMContentLoaded", () => {
+      const socioNuevo = JSON.parse(localStorage.getItem("socioNuevo"));
+
+      if (socioNuevo) {
+        const clienteSelect = document.getElementById("cliente");
+        const membresiaSelect = document.getElementById("membresia");
+
+        // Agregar socio automáticamente
+        const optionCliente = document.createElement("option");
+        optionCliente.value = socioNuevo.nombre;
+        optionCliente.textContent = `${socioNuevo.nombre} (DNI: ${socioNuevo.dni})`;
+        clienteSelect.appendChild(optionCliente);
+        clienteSelect.value = socioNuevo.nombre;
+
+        // Agregar membresía
+        const optionMembresia = document.createElement("option");
+        optionMembresia.value = socioNuevo.membresia;
+        optionMembresia.textContent = socioNuevo.membresia.replace("-", " ").toUpperCase();
+        membresiaSelect.appendChild(optionMembresia);
+        membresiaSelect.value = socioNuevo.membresia;
+
+        // Sugerir fecha actual y monto
+        const fechaHoy = new Date().toISOString().split("T")[0];
+        document.getElementById("fechaPago").value = fechaHoy;
+
+        if (socioNuevo.membresia === "mensual-estandar") document.getElementById("monto").value = 15000;
+        if (socioNuevo.membresia === "anual-premium") document.getElementById("monto").value = 120000;
+        if (socioNuevo.membresia === "clase-unica") document.getElementById("monto").value = 3000;
+      }
+    });
+
+    // === Registrar cobro ===
     document.getElementById("formCobro").addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -138,7 +165,6 @@
       const tipoTransf = document.getElementById("tipoTransferencia")?.value;
 
       if (metodo === "Transferencia" && tipoTransf) {
-        // Abrir QR real o generado
         if (cuentaGimnasio.linkPago) {
           window.open(cuentaGimnasio.linkPago, "_blank");
         } else {
@@ -146,9 +172,9 @@
           const urlQR = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(textoQR)}&size=200x200`;
           window.open(urlQR, "_blank");
         }
-      } else {
-        alert("Cobro registrado correctamente.");
       }
+      window.location.href = "socio-registroexitoso.html";
+
     });
   </script>
 </body>

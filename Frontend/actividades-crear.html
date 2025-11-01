@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Actividades - Cuerpo Sano</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/actividades.css"/>
+    <link rel="stylesheet" href="css/empleado.css" />
+    
+</head>
+
+<body>
+    <div class="dashboard-index">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+                <h1>CUERPO SANO</h1>
+            </div>
+            <nav class="menu-empleado">
+                <ul>
+                    <li><a href="empleado.html">Home</a></li>
+                    <li><a href="socios.html">Socios</a></li>
+                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="membresias.html">Membresías</a></li>
+                    <li><a href="#clases">Clases</a></li>
+                    <li><a href="actividades.html" class="active">Actividades</a></li>
+                    <li><a href="#cobros">Cobros</a></li>
+                    <li><a href="#asistencia">Registrar Asistencia</a></li>
+                    <li><a href="index.html" class="btn-salir">Salir</a></li> <!-- 🔹 Botón agregado -->
+                </ul>
+            </nav>
+        </aside>
+
+    
+   <!-- Main Content -->
+    <div class="content-area">
+        <h2>Gestión de Actividades</h2>
+        <p>Registrá, consultá o gestioná las actividades del gimnasio.</p>
+
+        <div class="form-container">
+            <h3>Registrar nueva actividad</h3>
+            <form action="#" method="post">
+                <div>
+                    <label for="nombre">Nombre de la actividad</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Yoga, CrossFit, Spinning" required>
+                </div>
+                <div>
+                    <label for="tipo">Tipo de actividad</label>
+                    <input type="text" id="tipo" name="tipo" placeholder="Ej: Grupo, Individual, Funcional" required>
+                </div>
+                <div>
+                    <label for="fechaInicio">Fecha de inicio</label>
+                    <input type="date" id="fechaInicio" name="fechaInicio" required>
+                </div>
+                <div>
+                    <label for="fechaFin">Fecha de finalización</label>
+                    <input type="date" id="fechaFin" name="fechaFin">
+                </div>
+                <div>
+                    <label for="horario">Horario</label>
+                    <input type="text" id="horario" name="horario" placeholder="Ej: Lunes y Miércoles 18:00 - 19:00">
+                </div>
+                <div>
+                    <label for="comentarios">Descripción / Comentarios</label>
+                    <textarea id="comentarios" name="comentarios" rows="3" placeholder="Detalles sobre la actividad..."></textarea>
+                </div>
+                <div>
+                    <button type="submit">Registrar Actividad</button>
+                    <button type="reset">Limpiar</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

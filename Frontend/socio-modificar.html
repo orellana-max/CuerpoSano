@@ -1,87 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuerpo Sano - Modificar o Consultar Miembros</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/empleado.css" />
-    <link rel="stylesheet" href="css/membresias-crear.css" />
-    <link rel="stylesheet" href="css/socios.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuerpo Sano - Gestión de Socios</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/empleado.css" />
+  <link rel="stylesheet" href="css/socios.css" />
 </head>
 <body>
-    <div class="dashboard-index">
-        <aside class="sidebar">
-            <div class="logo">
-                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
-                <h1>CUERPO SANO</h1>
-            </div>
-            <nav class="menu-empleado">
-                <ul>
-                    <li><a href="empleado.html">Inicio</a></li>
-                    <li><a href="socios.html" class="active">Clientes</a></li>
-                    <li><a href="membresias-crear.html">Crear Membresía</a></li>
-                    <li><a href="membresias-modificar.html">Modificar Membresías</a></li>
-                    <li><a href="#">Clases</a></li>
-                </ul>
-            </nav>
-        </aside>
+  <div class="dashboard-index">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+        <h1>CUERPO SANO</h1>
+      </div>
+      <nav class="menu-empleado">
+        <ul>
+          <li><a href="empleado.html">Inicio</a></li>
+          <li><a href="socio-crear.html">Registrar Socio</a></li>
+          <li><a href="socio-modificar.html" class="active">Gestión de Socios</a></li>
+          <li><a href="membresias.html">Membresías</a></li>
+          <li><a href="clases.html">Clases</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-        <main class="main-content">
-            <h2>Consultar, Modificar o Eliminar Miembros</h2>
-            <p>Buscá un socio para ver su estado, editar sus datos o dar de baja su registro</p>
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Lista de Socios</h2>
+      <p>Consultá, editá o eliminá los socios registrados.</p>
 
-            <section class="lista-miembros">
-                <form id="formBusqueda" style="margin-bottom: 20px; display: flex; gap: 10px;">
-                    <input type="text" placeholder="Buscar por DNI, Nombre o Código de Barras..." style="flex: 1; padding: 10px; border-radius: 6px;" />
-                    <button type="submit" class="btn-login" style="width: auto;">Buscar </button>
-                </form>
+      <!-- === BUSCADOR === -->
+      <section class="filtros-cobros">
+        <div class="busqueda">
+          <label for="buscarSocio">🔍 Buscar Socio:</label>
+          <input type="text" id="buscarSocio" placeholder="Ej: Juan García" />
+        </div>
+      </section>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>DNI</th>
-                            <th>Membresía</th>
-                            <th>Fecha de Ingreso</th>
-                            <th>Vencimiento Membresía</th>
-                            <th>Estado</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablaMiembros">
-                        <tr>
-                            <td>Juan García</td>
-                            <td>40512345</td>
-                            <td>Mensual</td>
-                            <td>15/09/2025</td>
-                            <td>15/10/2025</td>
-                            <td style="color: green; font-weight: bold;">Vigente</td>
-                            <td>
-                            <button class="btn-editar">Editar</button>
-                            <button class="btn-eliminar">Eliminar</button>
-                            <button onclick="imprimirCarnet()" class="btn-login">Imprimir Carnet</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>María Pérez</td>
-                            <td>35678901</td>
-                            <td>Anual</td>
-                            <td>01/01/2025</td>
-                            <td>01/01/2026</td>
-                            <td style="color: red; font-weight: bold;">Vencida</td>
-                            <td>
-                            <button class="btn-editar">Editar</button>
-                            <button class="btn-eliminar">Eliminar</button>
-                            <button onclick="imprimirCarnet()" class="btn-login">Imprimir Carnet</button>
-                            </td>
+      <!-- === TABLA === -->
+      <section class="lista-cobros">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>DNI</th>
+              <th>Membresía</th>
+              <th>Teléfono</th>
+              <th>Email</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaSocios">
+            <tr>
+              <td>SC001</td>
+              <td>Juan García</td>
+              <td>40123456</td>
+              <td>Mensual Estándar</td>
+              <td>1122334455</td>
+              <td>juan@gmail.com</td>
+              <td>
+                <button class="btn-editar">Editar</button>
+                <button class="btn-eliminar">Eliminar</button>
+                <button class="btn-imprimir">Imprimir Carnet</button>
+              </td>
+            </tr>
+            <tr>
+              <td>SC002</td>
+              <td>María López</td>
+              <td>38599887</td>
+              <td>Anual Premium</td>
+              <td>1167849900</td>
+              <td>maria@gmail.com</td>
+              <td>
+                <button class="btn-editar">Editar</button>
+                <button class="btn-eliminar">Eliminar</button>
+                <button class="btn-imprimir">Imprimir Carnet</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
 
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
-    </div>
+  <!-- === MODAL DE EDICIÓN === -->
+<div id="modalEditar" class="modal">
+  <div class="modal-contenido">
+    <h3>Editar Socio</h3>
+    <form id="formEditarSocio">
+      <input type="hidden" id="editId" />
+      <label>Nombre:</label>
+      <input type="text" id="editNombre" required />
+
+      <label>DNI:</label>
+      <input type="number" id="editDni" required />
+
+      <label>Membresía:</label>
+      <input type="text" id="editMembresia" required />
+
+      <label>Teléfono:</label>
+      <input type="text" id="editTelefono" required />
+
+      <label>Email:</label>
+      <input type="email" id="editEmail" required />
+
+      <div class="botones-modal">
+        <button type="submit" class="btn-login">Guardar Cambios</button>
+        <button type="button" id="cancelarEdicion" class="btn-login">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+  <!-- === SCRIPT EXTERNO === -->
+  <script src="js/socios-modificar.js"></script>
 </body>
-
 </html>

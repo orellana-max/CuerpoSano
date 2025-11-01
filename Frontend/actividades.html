@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Actividades - Cuerpo Sano</title>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/actividades.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuerpo Sano - Gestión de Miembros</title>
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/empleado.css" />
+    <link rel="stylesheet" href="css/socios.css" />
+    <style>
+        /* Estilos específicos para la página de menú de acción */
+        .acciones-miembro {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 50px;
+            max-width: 500px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-accion {
+            padding: 15px 30px;
+            background-color: var(--celeste); 
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none; 
+            text-align: center;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-accion:hover {
+            background-color: #0090dd;
+        }
+    </style>
 </head>
-
 <body>
     <div class="dashboard-index">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
                 <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
@@ -20,82 +48,31 @@
             <nav class="menu-empleado">
                 <ul>
                     <li><a href="empleado.html">Home</a></li>
-                    <li><a href="socios.html">Socios</a></li>
+                    <li><a href="socios.html" class="active">Socios</a></li>
                     <li><a href="entrenadores.html">Entrenadores</a></li>
                     <li><a href="membresias.html">Membresías</a></li>
-                    <li><a href="#clases">Clases</a></li>
-                    <li><a href="actividades.html" class="active">Actividades</a></li>
-                    <li><a href="#cobros">Cobros</a></li>
+                    <li><a href="clases.html">Clases</a></li>
+                    <li><a href="actividades.html">Actividades</a></li>
+                    <li><a href="cobros-historial.html">Cobros</a></li>
                     <li><a href="#asistencia">Registrar Asistencia</a></li>
                     <li><a href="index.html" class="btn-salir">Salir</a></li> <!-- 🔹 Botón agregado -->
                 </ul>
             </nav>
         </aside>
 
-    
-   <!-- Main Content -->
-    <div class="content-area">
-        <h2>Gestión de Actividades</h2>
-        <p>Registrá, consultá o gestioná las actividades del gimnasio.</p>
+        <main class="main-content">
+            <h2>Menú de Actividades</h2>
+            <p>Seleccione qué información requiere hacer.</p>
 
-        <div class="form-container">
-            <h3>Registrar nueva actividad</h3>
-            <form action="#" method="post">
-                <div>
-                    <label for="nombre">Nombre de la actividad</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Yoga, CrossFit, Spinning" required>
-                </div>
-                <div>
-                    <label for="tipo">Tipo de actividad</label>
-                    <input type="text" id="tipo" name="tipo" placeholder="Ej: Grupo, Individual, Funcional" required>
-                </div>
-                <div>
-                    <label for="fechaInicio">Fecha de inicio</label>
-                    <input type="date" id="fechaInicio" name="fechaInicio" required>
-                </div>
-                <div>
-                    <label for="fechaFin">Fecha de finalización</label>
-                    <input type="date" id="fechaFin" name="fechaFin">
-                </div>
-                <div>
-                    <label for="horario">Horario</label>
-                    <input type="text" id="horario" name="horario" placeholder="Ej: Lunes y Miércoles 18:00 - 19:00">
-                </div>
-                <div>
-                    <label for="comentarios">Descripción / Comentarios</label>
-                    <textarea id="comentarios" name="comentarios" rows="3" placeholder="Detalles sobre la actividad..."></textarea>
-                </div>
-                <div>
-                    <button type="submit">Registrar Actividad</button>
-                    <button type="reset">Limpiar</button>
-                </div>
-            </form>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Tipo</th>
-                    <th>Fechas</th>
-                    <th>Horario</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Yoga</td>
-                    <td>Grupal</td>
-                    <td>01/03/2025 - 30/06/2025</td>
-                    <td>Lunes y Miércoles 18:00</td>
-                    <td class="acciones">
-              	  <button class="editar">Editar</button>
-              	  <button class="eliminar">Eliminar</button>
-              	  <button class="imprimir">Imprimir</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+            <div class="acciones-miembro">
+                <a href="actividades-crear.html" class="btn-accion">
+                    Registrar nueva actividad
+                </a>
+                <a href="socio-modificar.html" class="btn-accion">
+                    Ver lista de actividades
+                </a>
+            </div>
+        </main>
     </div>
 </body>
 </html>

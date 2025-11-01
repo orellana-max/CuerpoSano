@@ -1,0 +1,120 @@
+/:root {
+  --azul: #1e3a8a;
+  --celeste: #00b3f0;
+  --gris: #f5f5f5;
+  --blanco: #ffffff;
+}
+
+.content-area {
+  margin-left: 150px;
+  padding: 2rem;
+  background-color: var(--gris);
+}
+
+h2, h3, h4 {
+  color: var(--azul);
+}
+
+/* === TABS === */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--azul);
+  color: var(--blanco);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background-color: var(--celeste);
+}
+
+.tab-content {
+  display: none;
+  background-color: var(--blanco);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* === FORMULARIOS === */
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  background-color: var(--azul);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--celeste);
+}
+
+/* === TABLAS === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: var(--azul);
+  color: white;
+}
+
+.acciones button {
+  border: none;
+  padding: 6px 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.editar { background-color: #2563eb; }
+.eliminar { background-color: #dc2626; }
+.imprimir { background-color: #16a34a; }
+
+.editar:hover { background-color: #1d4ed8; }
+.eliminar:hover { background-color: #b91c1c; }
+.imprimir:hover { background-color: #15803d; }
+
+@media (max-width: 768px) {
+  .tabs { flex-direction: column; }
+  table, thead, tbody, th, td, tr { display: block; }
+  th { display: none; }
+  td { padding-left: 50%; border-bottom: 1px solid #ddd; position: relative; }
+  td::before { position: absolute; left: 10px; font-weight: bold; color: var(--azul); }
+}

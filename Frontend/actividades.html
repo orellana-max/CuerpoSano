@@ -1,101 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Actividades - Cuerpo Sano</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de Actividades - Cuerpo Sano</title>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/actividades.css"/>
     <link rel="stylesheet" href="css/empleado.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1e3a8a;
+      color: white;
+    }
+
+    .acciones button {
+      border: none;
+      padding: 8px 12px;
+      margin-right: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+
+    .editar { background-color: #2563eb; }     /* Azul */
+    .eliminar { background-color: #dc2626; }   /* Rojo */
+    .imprimir { background-color: #16a34a; }   /* Verde */
+
+    .editar:hover { background-color: #1d4ed8; }
+    .eliminar:hover { background-color: #b91c1c; }
+    .imprimir:hover { background-color: #15803d; }
+  </style>
 </head>
 
 <body>
-    <div class="dashboard-index">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="logo">
-                <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
-                <h1>CUERPO SANO</h1>
-            </div>
-            <nav class="menu-empleado">
-                <ul>
-                    <li><a href="empleado.html">Home</a></li>
-                    <li><a href="socios.html">Socios</a></li>
-                    <li><a href="entrenadores.html">Entrenadores</a></li>
-                    <li><a href="membresias.html">Membresías</a></li>
-                    <li><a href="#clases">Clases</a></li>
-                    <li><a href="actividades.html" class="active">Actividades</a></li>
-                    <li><a href="#cobros">Cobros</a></li>
-                    <li><a href="#asistencia">Registrar Asistencia</a></li>
-                    <li><a href="index.html" class="btn-salir">Salir</a></li> <!-- 🔹 Botón agregado -->
-                </ul>
-            </nav>
-        </aside>
+  <div class="dashboard-index">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+        <h1>CUERPO SANO</h1>
+      </div>
+      <nav class="menu-empleado">
+        <ul>
+              <li><a href="empleado.html">Home</a></li>
+              <li><a href="socios.html">Socios</a></li>
+              <li><a href="entrenadores.html">Entrenadores</a></li>
+               <li><a href="membresias.html">Membresías</a></li>
+               <li><a href="#clases">Clases</a></li>
+               <li><a href="actividades.html" class="active">Actividades</a></li>
+                <li><a href="#cobros">Cobros</a></li>
+                <li><a href="#asistencia">Registrar Asistencia</a></li>
+                <li><a href="index.html" class="btn-salir">Salir</a></li> <!-- 🔹 Botón agregado -->
+        </ul>
+      </nav>
+    </aside>
 
-    
-   <!-- Main Content -->
-    <div class="content-area">
-        <h2>Gestión de Actividades</h2>
-        <p>Registrá, consultá o gestioná las actividades del gimnasio.</p>
+<!-- Main Content -->
+  <div class="content-area">
+      <h2>Gestión de Actividades</h2>
+      <p>Registrá, consultá o gestioná las actividades del gimnasio.</p>
 
-        <div class="form-container">
-            <h3>Registrar nueva actividad</h3>
-            <form action="#" method="post">
-                <div>
-                    <label for="nombre">Nombre de la actividad</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Yoga, CrossFit, Spinning" required>
-                </div>
-                <div>
-                    <label for="tipo">Tipo de actividad</label>
-                    <input type="text" id="tipo" name="tipo" placeholder="Ej: Grupo, Individual, Funcional" required>
-                </div>
-                <div>
-                    <label for="fechaInicio">Fecha de inicio</label>
-                    <input type="date" id="fechaInicio" name="fechaInicio" required>
-                </div>
-                <div>
-                    <label for="fechaFin">Fecha de finalización</label>
-                    <input type="date" id="fechaFin" name="fechaFin">
-                </div>
-                <div>
-                    <label for="horario">Horario</label>
-                    <input type="text" id="horario" name="horario" placeholder="Ej: Lunes y Miércoles 18:00 - 19:00">
-                </div>
-                <div>
-                    <label for="comentarios">Descripción / Comentarios</label>
-                    <textarea id="comentarios" name="comentarios" rows="3" placeholder="Detalles sobre la actividad..."></textarea>
-                </div>
-                <div>
-                    <button type="submit">Registrar Actividad</button>
-                    <button type="reset">Limpiar</button>
-                </div>
-            </form>
-        </div>
+      <div class="form-container">
+        <h3>Registrar nueva actividad</h3>
+        <form id="formActividad">
+          <label for="nombre">Nombre de la actividad</label>
+          <input type="text" id="nombre" required name="nombre" placeholder="Ej: Yoga, CrossFit, Spinning" />
+          <label for="tipo">Tipo de actividad</label>
+          <input type="text" id="tipo" name="tipo" placeholder="Ej: Grupo, Individual, Funcional" required />
+          <label for="fechaInicio">Fecha de inicio</label>
+          <input type="date" id="fechaInicio" required />
+          <label for="fechaFin">Fecha de finalización</label>
+          <input type="date" id="fechaFin" />
+          <label for="horario">Horario</label>
+          <input type="text" id="horario" name="horario" placeholder="Ej: Lunes y Miércoles 18:00 - 19:00"required />
+          <button type="submit">Registrar Actividad</button>
+          <button type="reset">Limpiar</button>
+        </form>
+      </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Tipo</th>
-                    <th>Fechas</th>
-                    <th>Horario</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Yoga</td>
-                    <td>Grupal</td>
-                    <td>01/03/2025 - 30/06/2025</td>
-                    <td>Lunes y Miércoles 18:00</td>
-                    <td class="acciones">
-              	  <button class="editar">Editar</button>
-              	  <button class="eliminar">Eliminar</button>
-              	  <button class="imprimir">Imprimir</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+      <table id="tablaActividades">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Fechas</th>
+            <th>Horario</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Yoga</td>
+            <td>Grupal</td>
+            <td>01/03/2025 - 30/06/2025</td>
+            <td>Lunes y Miércoles 18:00</td>
+            <td class="acciones">
+              <button class="editar">Editar</button>
+              <button class="eliminar">Eliminar</button>
+              <button class="imprimir">Imprimir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
+
+  <script>
+    const tabla = document.getElementById("tablaActividades").querySelector("tbody");
+
+    // Registrar nueva actividad
+    document.getElementById("formActividad").addEventListener("submit", e => {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const tipo = document.getElementById("tipo").value;
+      const fechaInicio = document.getElementById("fechaInicio").value;
+      const fechaFin = document.getElementById("fechaFin").value;
+      const horario = document.getElementById("horario").value;
+
+      const fila = document.createElement("tr");
+      fila.innerHTML = `
+        <td>${nombre}</td>
+        <td>${tipo}</td>
+        <td>${fechaInicio} - ${fechaFin}</td>
+        <td>${horario}</td>
+        <td class="acciones">
+          <button class="editar">Editar</button>
+          <button class="eliminar">Eliminar</button>
+          <button class="imprimir">Imprimir</button>
+        </td>
+      `;
+      tabla.appendChild(fila);
+      e.target.reset();
+    });
+
+    // Funcionalidad de botones
+    tabla.addEventListener("click", e => {
+      const fila = e.target.closest("tr");
+      if (e.target.classList.contains("eliminar")) {
+        if (confirm("¿Seguro que querés eliminar esta actividad?")) fila.remove();
+      }
+
+      if (e.target.classList.contains("editar")) {
+        const celdas = fila.querySelectorAll("td:not(.acciones)");
+        if (e.target.textContent === "Editar") {
+          celdas.forEach(td => {
+            const input = document.createElement("input");
+            input.value = td.textContent;
+            td.textContent = "";
+            td.appendChild(input);
+          });
+          e.target.textContent = "Guardar";
+          e.target.style.backgroundColor = "#facc15";
+        } else {
+          celdas.forEach(td => {
+            td.textContent = td.firstChild.value;
+          });
+          e.target.textContent = "Editar";
+          e.target.style.backgroundColor = "#2563eb";
+        }
+      }
+
+      if (e.target.classList.contains("imprimir")) {
+        const datos = Array.from(fila.querySelectorAll("td:not(.acciones)"))
+          .map(td => td.textContent)
+          .join("\n");
+        const w = window.open("", "_blank");
+        w.document.write(`<pre>${datos}</pre>`);
+        w.print();
+      }
+    });
+  </script>
 </body>
 </html>

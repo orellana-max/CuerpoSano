@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo de Asistencias</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/asistencias.css"/>
+  <link rel="stylesheet" href="css/empleado.css" />
+</head>
+<body>
+  <div class="dashboard-index">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="image/logo02Azul.png" alt="Logo Cuerpo Sano" />
+        <h1>CUERPO SANO</h1>
+      </div>
+      <nav class="menu-empleado">
+        <ul>
+              <li><a href="empleado.html">Home</a></li>
+              <li><a href="socios.html">Socios</a></li>
+              <li><a href="entrenadores.html">Entrenadores</a></li>
+              <li><a href="membresias.html">Membresías</a></li>
+              <li><a href="#clases">Clases</a></li>
+              <li><a href="actividades.html" class="active">Actividades</a></li>
+              <li><a href="#cobros">Cobros</a></li>
+              <li><a href="#asistencia">Registrar Asistencia</a></li>
+              <li><a href="index.html" class="btn-salir">Salir</a></li> <!-- 🔹 Botón agregado -->
+        </ul>
+      </nav>
+    </aside>
+
+
+  <div class="content-area">
+    <h2>Gestión de Asistencias</h2>
+    <p>Registrar la asistencia de entrenadores y socios al gimnasio y a las clases.</p>
+
+    <!-- === NAV TABS === -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="entrenador">Asistencia Entrenador</button>
+      <button class="tab-btn" data-tab="socioGimnasio">Asistencia Socio (Gimnasio)</button>
+      <button class="tab-btn" data-tab="socioClase">Asistencia Socio (Clase)</button>
+    </div>
+
+    <!-- === TAB CONTENT === -->
+    <div id="entrenador" class="tab-content active">
+      <h3>Registrar Asistencia de Entrenador</h3>
+      <form id="formEntrenador">
+        <label>ID Entrenador / Código:</label>
+        <input type="text" id="idEntrenador" required>
+
+        <label>Clase Asignada:</label>
+        <input type="text" id="claseEntrenador" required>
+
+        <label>Hora de Ingreso:</label>
+        <input type="datetime-local" id="horaEntrenador" required>
+
+        <button type="submit">Registrar Asistencia</button>
+      </form>
+
+      <div class="tabla-container">
+        <h4>Asistencias Registradas</h4>
+        <table id="tablaEntrenador">
+          <thead>
+            <tr>
+              <th>ID Entrenador</th>
+              <th>Clase</th>
+              <th>Hora de Ingreso</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- === ASISTENCIA SOCIO GIMNASIO === -->
+    <div id="socioGimnasio" class="tab-content">
+      <h3>Registrar Asistencia de Socio al Gimnasio</h3>
+      <form id="formSocioGimnasio">
+        <label>ID Socio / Código:</label>
+        <input type="text" id="idSocioGimnasio" required>
+
+        <label>Hora de Ingreso:</label>
+        <input type="datetime-local" id="horaSocioGimnasio" required>
+
+        <button type="submit">Registrar Asistencia</button>
+      </form>
+
+      <div class="tabla-container">
+        <h4>Asistencias al Gimnasio</h4>
+        <table id="tablaSocioGimnasio">
+          <thead>
+            <tr>
+              <th>ID Socio</th>
+              <th>Hora de Ingreso</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- === ASISTENCIA SOCIO CLASE === -->
+    <div id="socioClase" class="tab-content">
+      <h3>Registrar Asistencia de Socio a Clase</h3>
+      <form id="formSocioClase">
+        <label>ID Socio / Código:</label>
+        <input type="text" id="idSocioClase" required>
+
+        <label>Clase:</label>
+        <input type="text" id="claseSocio" required>
+
+        <label>Hora de Ingreso:</label>
+        <input type="datetime-local" id="horaSocioClase" required>
+
+        <button type="submit">Registrar Asistencia</button>
+      </form>
+
+      <div class="tabla-container">
+        <h4>Asistencias a Clases</h4>
+        <table id="tablaSocioClase">
+          <thead>
+            <tr>
+              <th>ID Socio</th>
+              <th>Clase</th>
+              <th>Hora de Ingreso</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ==== CAMBIO DE TABS ====
+    const tabs = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+      });
+    });
+
+    // ==== FUNCIÓN GENERAL DE TABLAS ====
+    function addRow(formId, tableId, campos) {
+      const form = document.getElementById(formId);
+      const tbody = document.querySelector(`#${tableId} tbody`);
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        const fila = document.createElement("tr");
+        let celdas = "";
+        campos.forEach(id => celdas += `<td>${document.getElementById(id).value}</td>`);
+        fila.innerHTML = celdas + `
+          <td class="acciones">
+            <button class="editar">Editar</button>
+            <button class="eliminar">Eliminar</button>
+            <button class="imprimir">Imprimir</button>
+          </td>`;
+        tbody.appendChild(fila);
+        form.reset();
+      });
+    }
+
+    addRow("formEntrenador", "tablaEntrenador", ["idEntrenador", "claseEntrenador", "horaEntrenador"]);
+    addRow("formSocioGimnasio", "tablaSocioGimnasio", ["idSocioGimnasio", "horaSocioGimnasio"]);
+    addRow("formSocioClase", "tablaSocioClase", ["idSocioClase", "claseSocio", "horaSocioClase"]);
+
+    // ==== BOTONES ====
+    document.addEventListener("click", e => {
+      if (e.target.classList.contains("eliminar")) {
+        e.target.closest("tr").remove();
+      }
+
+      if (e.target.classList.contains("editar")) {
+        const fila = e.target.closest("tr");
+        const celdas = fila.querySelectorAll("td");
+        celdas.forEach((celda, i) => {
+          if (i < celdas.length - 1) {
+            const nuevo = prompt(`Editar valor (${celda.textContent}):`, celda.textContent);
+            if (nuevo) celda.textContent = nuevo;
+          }
+        });
+      }
+
+      if (e.target.classList.contains("imprimir")) {
+        const datos = Array.from(e.target.closest("tr").querySelectorAll("td"))
+          .slice(0, -1)
+          .map(td => td.textContent)
+          .join("\n");
+        const ventana = window.open("", "", "width=600,height=400");
+        ventana.document.write(`<pre>${datos}</pre>`);
+        ventana.print();
+      }
+    });
+  </script>
+</body>
+</html>
